@@ -10,6 +10,7 @@
   provider-name="VEMAR S.A.S.">
   <requires>
     <import addon="xbmc.gui" version="2.11"/>
+    <import addon="xbmc.python" version="1.0"/>
   </requires>
   <extension point="xbmc.addon.metadata">
     <summary>Control MiCasaVerde's Vera 2 (Home Automation)</summary>
