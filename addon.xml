@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-  Using example from: 
-  http://wiki.xbmc.org/index.php?title=Add-ons_for_XBMC_%28Development%29#addon.xml
--->
 <addon
   id="script.vera"
   version="0.0.1"
   name="Vera"
   provider-name="VEMAR S.A.S.">
   <requires>
-    <import addon="xbmc.gui" version="2.11"/>
     <import addon="xbmc.python" version="1.0"/>
   </requires>
   <extension point="xbmc.addon.metadata">
-    <summary>Control MiCasaVerde's Vera 2 (Home Automation)</summary>
+    <summary>Control MiCasaVerde's Vera2 (Home Automation)</summary>
     <summary lang="it">Controlla il discpositivo domotico Vera 2 di MiCasaVerde</summary>
     <description>Gets info and controls settings of Z-Wave devices via Vera 2 Controller.</description>
     <description lang="it">Ottiene informazioni e imposta lo stato dei dispositivi Z-Wave tramite il Controller domotico Vera 2.</description>
     <platform>all</platform>
   </extension>
-  <extension point="xbmc.python.script" library="default.py"/>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
 </addon>
