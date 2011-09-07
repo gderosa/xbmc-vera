@@ -10,7 +10,6 @@
              library="default.py" />
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>28764</minversion> 
     <summary lang="en">Control Mi Casa Verde's Vera 2</summary>
     <description lang="en">This script allows you to get info and change state of your Z-Wave devices through Mi Casa Verde Vera 2 home controller (http://www.micasaverde.com/vera.php).
     </description>
