@@ -1,20 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<addon
-  id="script.vera"
-  version="0.0.1"
-  name="Vera"
-  provider-name="VEMAR S.A.S.">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.vera"
+       name="Vera Home Automation"
+       version="0.0.1"
+       provider-name="VEMAR S.A.S.">
   <requires>
     <import addon="xbmc.python" version="1.0"/>
   </requires>
+  <extension point="xbmc.python.script"
+             library="default.py" />
   <extension point="xbmc.addon.metadata">
-    <summary>Control MiCasaVerde's Vera2 (Home Automation)</summary>
-    <summary lang="it">Controlla il discpositivo domotico Vera 2 di MiCasaVerde</summary>
-    <description>Gets info and controls settings of Z-Wave devices via Vera 2 Controller.</description>
-    <description lang="it">Ottiene informazioni e imposta lo stato dei dispositivi Z-Wave tramite il Controller domotico Vera 2.</description>
     <platform>all</platform>
-  </extension>
-  <extension point="xbmc.python.script" library="default.py">
-    <provides>executable</provides>
+    <minversion>28764</minversion> 
+    <summary lang="en">Control Mi Casa Verde's Vera 2</summary>
+    <description lang="en">This script allows you to get info and change state of your Z-Wave devices through Mi Casa Verde Vera 2 home controller (http://www.micasaverde.com/vera.php).
+    </description>
   </extension>
 </addon>
