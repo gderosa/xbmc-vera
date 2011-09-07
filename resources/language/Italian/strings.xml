@@ -1,0 +1,10 @@
+<?xml version ="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+  <!-- Addon Name -->
+  <string id="30200">Vera Domotica</string>
+  <!-- Settings -->
+  <string id="30201">Indirizzo IP del controller Vera</string>
+  <!-- Settings categories -->
+  <string id="30281">Generale</string>
+</strings>
+

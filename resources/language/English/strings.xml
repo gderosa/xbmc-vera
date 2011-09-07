@@ -1,0 +1,10 @@
+<?xml version ="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+  <!-- Addon Name -->
+  <string id="30200">Vera Home Automation</string>
+  <!-- Settings -->
+  <string id="30201">Vera Controller IP Address</string>
+  <!-- Settings categories -->
+  <string id="30281">General</string>
+</strings>
+
