@@ -1,0 +1,96 @@
+<?xml version="1.0" ?> 
+<window>
+  <!-- <defaultcontrol always="true">1</defaultcontrol> -->
+  <allowoverlay>no</allowoverlay>
+  <coordinates>
+    <system>1</system>
+    <posx>200</posx>
+    <posy>45</posy>
+  </coordinates>
+  <controls>
+  
+    <control type="label">
+      <description>header label</description>
+      <posx>40</posx>
+      <posy>18</posy>
+      <width>800</width>
+      <height>30</height>
+      <font>font13_title</font>
+      <label>Vera Home Automation</label>
+      <align>center</align>
+      <aligny>center</aligny>
+      <textcolor>white</textcolor>
+      <shadowcolor>black</shadowcolor>
+    </control>
+    
+    <control type="label">
+      <description>header label</description>
+      <posx>40</posx>
+      <posy>78</posy>
+      <width>800</width>
+      <height>30</height>
+      <font>font13_title</font>
+      <label>label 2</label>
+      <align>center</align>
+      <aligny>center</aligny>
+      <textcolor>white</textcolor>
+      <shadowcolor>black</shadowcolor>
+    </control>    
+    
+    
+    <control type="group">
+			<posx>90</posx>
+			<posy>300</posy>
+      
+      <control type="list">
+				<posx>10</posx>
+				<posy>300</posy>
+				<width>260</width>
+				<height>541</height>
+				<pagecontrol>-</pagecontrol>
+				<scrolltime>300</scrolltime>
+        
+        
+        <itemlayout height="54" width="260">
+          <control type="label">
+            <posx>250</posx>
+            <posy>0</posy>
+            <width>380</width>
+            <height>55</height>
+            <font>font24_title</font>
+            <textcolor>grey3</textcolor>
+            <align>right</align>
+            <aligny>center</aligny>
+            <label>$INFO[ListItem.Label]</label>
+          </control>
+        </itemlayout>
+        
+        <focusedlayout height="54" width="260">
+          <control type="label">
+            <posx>250</posx>
+            <posy>0</posy>
+            <width>380</width>
+            <height>55</height>
+            <font>font24_title</font>
+            <textcolor>white</textcolor>
+            <align>right</align>
+            <aligny>center</aligny>
+            <label>$INFO[ListItem.Label]</label>
+          </control>
+        </focusedlayout>
+        
+        <content>
+          <item>
+            <label>ASHJKHKJAHSK</label>
+            <label2>31400</label2>
+            <!-- <onclick>ActivateWindow(AppearanceSettings)</onclick> -->
+            <!-- <icon>special://skin/backgrounds/appearance.jpg</icon> -->
+          </item>
+        </content>
+        
+      </control>
+      
+    </control>
+    
+  </controls>
+</window>
