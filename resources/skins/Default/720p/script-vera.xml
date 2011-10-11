@@ -25,22 +25,34 @@
     <control type="grouplist" id="103">
       <posy>200</posy>
       <posx>60</posx>
-      <width>800</width>
+      <width>400</width>
       <height>450</height>
       <itemgap>10</itemgap>
       <pagecontrol>21</pagecontrol>
       <scrolltime>0</scrolltime>
       <orientation>vertical</orientation>
+      <onright>104</onright>
       <!-- <usecontrolcoords>true</usecontrolcoords>          -->
       
       <control type="button" id="1001">	
-	<label>Room_1</label>	  	
+	<label>Room_1</label>	
       </control>
       
       <control type="button" id="1002">
 	<label>Other Devices</label>	
       </control>
-
+      
+    </control>
+    
+    <control type="grouplist" id="104">
+      <posx>500</posx>
+      <posy>200</posy>
+      <onleft>103</onleft>
+      
+      <control type="button" id="2001">		
+	<label>Settings</label>	  	
+      </control>      
+      
     </control>
     
   </controls>
