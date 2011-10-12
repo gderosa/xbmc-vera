@@ -52,6 +52,9 @@
       <control type="button" id="2001">    
         <label>Settings</label>      
       </control>      
+      <control type="button" id="2002">    
+        <label>Get Data</label>      
+      </control>            
       <control type="button" id="9999">    
         <label>Exit</label>      
       </control>      

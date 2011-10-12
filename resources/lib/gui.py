@@ -2,6 +2,8 @@ import xbmc
 import xbmcgui
 import xbmcaddon
 
+import vera
+
 import controlid 
 
 __addon__ = xbmcaddon.Addon()
@@ -18,5 +20,13 @@ class GUI( xbmcgui.WindowXML ):
         if      controlID == controlid.SETTINGS:
             self.settingsOpen = True
             __addon__.openSettings()
+        elif    controlID == controlid.GET_DATA:
+            data = vera.getData('192.168.33.155')
+            self.updateRooms(data)
         elif    controlID == controlid.EXIT:
             self.close()
+
+    def updateRooms(self, data):
+        print 'updateRooms(' + str(data) + ')'
+
+

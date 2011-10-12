@@ -2,6 +2,6 @@
 # as in <control type="_the_type_" id="_the_id_">
 
 SETTINGS  = 2001
-
+GET_DATA  = 2002
 EXIT      = 9999
 
