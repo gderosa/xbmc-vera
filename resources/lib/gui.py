@@ -15,7 +15,8 @@ class GUI( xbmcgui.WindowXML ):
         pass
 
     def onClick(self, controlID):
-        # if controlID == 2001:
-        if controlID == controlid.SETTINGS:
+        if      controlID == controlid.SETTINGS:
             self.settingsOpen = True
             __addon__.openSettings()
+        elif    controlID == controlid.EXIT:
+            self.close()
