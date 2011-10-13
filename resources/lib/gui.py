@@ -14,11 +14,12 @@ class GUI( xbmcgui.WindowXML ):
         pass
 
     def onInit(self):
-        self.vera = vera.Controller(__addon__.getSetting('controller_ip'))
+        self.updateVera()
 
     def onClick(self, controlID):
         if      controlID == controlid.SETTINGS:
             __addon__.openSettings()
+            self.updateVera()
         elif    controlID == controlid.GET_DATA:
             self.vera.getData()
             self.updateRooms()
@@ -33,4 +34,5 @@ class GUI( xbmcgui.WindowXML ):
             button = self.getControl(controlID) 
             button.setLabel(room['name'])
 
-
+    def updateVera(self):
+        self.vera = vera.Controller(__addon__.getSetting('controller_ip'))
