@@ -35,39 +35,28 @@
       <!-- <usecontrolcoords>true</usecontrolcoords>          -->
       
       <control type="button" id="1001">  
-        <description>Devices which aren't in any room</description>
-        <label>Devices</label>  
+        <label>(Devices not in any room)</label>  
       </control>
       
       <control type="button" id="1002">
-        <label>(blank)</label>  
       </control>
       <control type="button" id="1003">
-        <label>(blank)</label>  
       </control>      
       <control type="button" id="1004">
-        <label>(blank)</label>  
       </control>
       <control type="button" id="1005">
-        <label>(blank)</label>  
       </control>      
       <control type="button" id="1006">
-        <label>(blank)</label>  
       </control>
       <control type="button" id="1007">
-        <label>(blank)</label>  
       </control>      
       <control type="button" id="1008">
-        <label>(blank)</label>  
       </control>
       <control type="button" id="1009">
-        <label>(blank)</label>  
       </control>      
       <control type="button" id="1010">
-        <label>(blank)</label>  
       </control>
       <control type="button" id="1011">
-        <label>(blank)</label>  
       </control>                            
       
     </control>
