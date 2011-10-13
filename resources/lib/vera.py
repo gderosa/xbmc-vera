@@ -12,8 +12,8 @@ class Controller:
     def getData( self ):
         http = httplib.HTTPConnection(self.host, self.port)
         http.request('GET', '/data_request?id=sdata')
-        response = http.getresponse()
-        self.data = json.loads(response.read())
+        response = http.getresponse() # it's an IO-like object
+        self.data = json.load(response)
 
     
 
