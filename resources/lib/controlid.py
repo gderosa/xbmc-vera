@@ -1,7 +1,10 @@
 # A collection of constants: the Control IDs matching the skin xml
-# as in <control type="_the_type_" id="_the_id_">
+# as in <control ... id="_the_id_">
 
-SETTINGS  = 2001
-GET_DATA  = 2002
-EXIT      = 9999
+ROOM_LIST   = 103
+ROOM_FIRST  = 1001
+
+SETTINGS    = 2001
+GET_DATA    = 2002
+EXIT        = 9999
 
