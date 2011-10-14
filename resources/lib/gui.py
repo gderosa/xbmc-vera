@@ -86,7 +86,7 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
                 self.showLabel(controlID, device['name'])
                 controlID += 1
 
-        self.hideDevices(controlID)
+        #self.hideDevices(controlID)
 
     def showLabel(self, controlID, label): # TODO: DRY
         control = self.getControl(controlID)
