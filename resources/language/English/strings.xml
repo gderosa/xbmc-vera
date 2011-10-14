@@ -3,7 +3,7 @@
   <!-- Addon Name -->
   <string id="30200">Vera Home Automation</string>
   <!-- Settings -->
-  <string id="30201">Vera Controller IP Address</string>
+  <string id="30201">Vera Controller host name or IP address</string>
   <!-- Settings categories -->
   <string id="30281">General</string>
 </strings>

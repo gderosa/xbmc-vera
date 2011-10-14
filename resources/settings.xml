@@ -1,6 +1,6 @@
 <?xml version ="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
   <category label="30281">
-    <setting id="controller_ip" type="ipaddress" label="30201" default=""/>
+    <setting id="controller_address" type="text" label="30201" default=""/>
   </category>
 </settings>

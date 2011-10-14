@@ -3,7 +3,7 @@ import json
 
 class Controller:
 
-    PORT = 49451
+    PORT = 3480
 
     def __init__( self, host ):
         self.host = host

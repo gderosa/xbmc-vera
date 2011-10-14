@@ -66,7 +66,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
             button.setVisible(False)
 
     def updateVera(self):
-        self.vera = vera.Controller(__addon__.getSetting('controller_ip'))
+        self.vera = vera.Controller(__addon__.getSetting('controller_address'))
 
 
 class RoomUI( xbmcgui.WindowXMLDialog ):
