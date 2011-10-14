@@ -25,6 +25,9 @@ class GUI( xbmcgui.WindowXML ):
             self.updateRooms()
         elif    controlID == controlid.EXIT:
             self.close()
+        elif    controlID in self.buttonIDToRoom.keys():
+            room = self.buttonIDToRoom[controlID]
+            print 'ROOM BUTTON PRESSED FOR \'' + room['name'] + '\''
 
     def updateRooms(self):
         rooms = self.vera.data['rooms']
