@@ -1,0 +1,82 @@
+<?xml version="1.0" ?> 
+<window type="dialog">
+  <allowoverlay>no</allowoverlay>
+  <coordinates>
+    <system>1</system>
+    <posx>0</posx>
+    <posy>0</posy>
+  </coordinates>
+  
+  <controls>  
+    <control type="label" id="10101">
+      <posx>40</posx>
+      <posy>70</posy>
+      <width>800</width>
+      <height>20</height>
+      <font>font13_title</font>
+      <label>Room</label>
+      <align>center</align>
+      <aligny>center</aligny>
+      <textcolor>white</textcolor>
+      <shadowcolor>black</shadowcolor>
+    </control>
+    
+    <control type="grouplist" id="10103">
+      <posy>200</posy>
+      <posx>60</posx>
+      <width>400</width>
+      <height>450</height>
+      <itemgap>10</itemgap>
+      <pagecontrol>21</pagecontrol>
+      <scrolltime>0</scrolltime>
+      <orientation>vertical</orientation>
+      <onright>104</onright>
+      <!-- <usecontrolcoords>true</usecontrolcoords>          -->
+      
+      <control type="button" id="11001">  
+        <label>(no devices)</label>  
+      </control>
+      
+      <control type="button" id="11002">
+      </control>
+      <control type="button" id="11003">
+      </control>      
+      <control type="button" id="11004">
+      </control>
+      <control type="button" id="11005">
+      </control>      
+      <control type="button" id="11006">
+      </control>
+      <control type="button" id="11007">
+      </control>      
+      <control type="button" id="11008">
+      </control>
+      <control type="button" id="11009">
+      </control>      
+      <control type="button" id="11010">
+      </control>
+      <control type="button" id="11011">
+      </control>                            
+      
+    </control>
+    
+    <control type="grouplist" id="10104">
+      <posx>500</posx>
+      <posy>200</posy>
+      <onleft>103</onleft>
+      
+      <control type="button" id="12001">    
+        <label>Settings</label>      
+      </control>      
+      <control type="button" id="12002">    
+        <label>Get Data</label>      
+      </control>            
+      <control type="button" id="19999">    
+        <label>Exit</label>      
+      </control>      
+      
+    </control>
+    
+  </controls>
+
+</window>

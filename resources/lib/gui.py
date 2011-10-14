@@ -27,7 +27,11 @@ class GUI( xbmcgui.WindowXML ):
             self.close()
         elif    controlID in self.buttonIDToRoom.keys():
             room = self.buttonIDToRoom[controlID]
-            print 'ROOM BUTTON PRESSED FOR \'' + room['name'] + '\''
+            roomUI = xbmcgui.WindowXML('room.xml', __cwd__, 'Default')
+            roomUI.getControl(10101).setLabel(room['name'])
+            roomUI.doModal()
+            del roomUI
+
 
     def updateRooms(self):
         rooms = self.vera.data['rooms']
@@ -41,8 +45,6 @@ class GUI( xbmcgui.WindowXML ):
             controlID += 1
 
         self.hideRooms(controlID)
-
-        print 'vera: buttonIDToRoom = ' + str(self.buttonIDToRoom)
 
     def showLabel(self, controlID, label):
         control = self.getControl(controlID)
