@@ -10,13 +10,13 @@ import controlid.room
 __addon__   = xbmcaddon.Addon()
 __cwd__     = __addon__.getAddonInfo('path')
 
-class GUI( xbmcgui.WindowXML ):
+class GUI( xbmcgui.WindowXMLDialog ):
     def __init__(self, *args, **kwargs):
         self.buttonIDToRoom = {}
 
     def onInit(self):
-        self.updateVera()
         self.hideRooms()
+        self.updateVera()
 
     def onClick(self, controlID):
         if      controlID == controlid.SETTINGS:

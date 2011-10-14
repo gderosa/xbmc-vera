@@ -9,6 +9,14 @@
   </coordinates>
   
   <controls>  
+    <control type="image">
+      <posx>16</posx>
+      <posy>16</posy>
+      <width>1248</width>
+      <height>688</height>
+      <texture>bg0.png</texture>
+    </control>
+    
     <control type="label" id="101">
       <posx>40</posx>
       <posy>70</posy>
