@@ -3,7 +3,6 @@ import xbmcgui
 import xbmcaddon
 
 import vera
-
 import controlid 
 
 __addon__   = xbmcaddon.Addon()
@@ -29,13 +28,20 @@ class GUI( xbmcgui.WindowXML ):
 
     def updateRooms(self):
         rooms = self.vera.data['rooms']
+        
+        self.showLabel(controlid.ROOM_NONE, '(other devices and scenes)')
+
         controlID = controlid.ROOM_FIRST
         for room in rooms:
-            button = self.getControl(controlID) 
-            button.setVisible(True)
-            button.setLabel(room['name'])
+            self.showLabel(controlID, room['name'])
             controlID += 1
-        self.hideRooms(controlID) 
+
+        self.hideRooms(controlID)
+
+    def showLabel(self, controlID, label):
+        control = self.getControl(controlID)
+        control.setVisible(True)
+        control.setLabel(label)
 
     def hideRooms(self, first=controlid.ROOM_FIRST):
         for controlID in range(first, controlid.ROOM_LAST + 1):

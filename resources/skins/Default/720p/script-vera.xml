@@ -35,7 +35,7 @@
       <!-- <usecontrolcoords>true</usecontrolcoords>          -->
       
       <control type="button" id="1001">  
-        <label>(Devices not in any room)</label>  
+        <label>(no rooms)</label>  
       </control>
       
       <control type="button" id="1002">
