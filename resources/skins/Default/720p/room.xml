@@ -1,16 +1,24 @@
 <?xml version="1.0" ?> 
 <window type="dialog">
+  <defaultcontrol always="true">11001</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <coordinates>
     <system>1</system>
     <posx>0</posx>
     <posy>0</posy>
   </coordinates>
-  
   <controls>  
+    <control type="image">
+      <posx>16</posx>
+      <posy>16</posy>
+      <width>1248</width>
+      <height>688</height>
+      <texture>bg.png</texture>
+    </control>
+
     <control type="label" id="10101">
-      <posx>40</posx>
-      <posy>70</posy>
+      <posx>50</posx>
+      <posy>80</posy>
       <width>800</width>
       <height>20</height>
       <font>font13_title</font>
@@ -18,20 +26,18 @@
       <align>center</align>
       <aligny>center</aligny>
       <textcolor>white</textcolor>
-      <shadowcolor>black</shadowcolor>
     </control>
     
     <control type="grouplist" id="10103">
-      <posy>200</posy>
-      <posx>60</posx>
+      <posy>210</posy>
+      <posx>80</posx>
       <width>400</width>
       <height>450</height>
       <itemgap>10</itemgap>
       <pagecontrol>21</pagecontrol>
       <scrolltime>0</scrolltime>
       <orientation>vertical</orientation>
-      <onright>104</onright>
-      <!-- <usecontrolcoords>true</usecontrolcoords>          -->
+      <onright>10104</onright>
       
       <control type="button" id="11001">  
         <label>(no devices)</label>  
@@ -62,12 +68,9 @@
     
     <control type="grouplist" id="10104">
       <posx>500</posx>
-      <posy>200</posy>
-      <onleft>103</onleft>
+      <posy>210</posy>
+      <onleft>10103</onleft>
       
-      <control type="button" id="12001">    
-        <label>Settings</label>      
-      </control>      
       <control type="button" id="12002">    
         <label>Get Data</label>      
       </control>            
