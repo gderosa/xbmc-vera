@@ -3,7 +3,9 @@ import xbmcgui
 import xbmcaddon
 
 import vera
+
 import controlid 
+import controlid.room
 
 __addon__   = xbmcaddon.Addon()
 __cwd__     = __addon__.getAddonInfo('path')
@@ -67,9 +69,35 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
         self.vera = kwargs['vera']
 
     def onInit(self):
+        self.hideDevices()
         label = self.getControl(10101)
         label.setLabel(self.room['name'])
+        self.updateDevices()
 
     def onClick(self, controlID):
         pass
+
+    def updateDevices(self):
+        devices = self.vera.data['devices']
+
+        controlID = controlid.room.DEVICE_FIRST
+        for device in devices:
+            if device['room'] == self.room['id'] :
+                self.showLabel(controlID, device['name'])
+                controlID += 1
+
+        self.hideDevices(controlID)
+
+    def showLabel(self, controlID, label): # TODO: DRY
+        control = self.getControl(controlID)
+        control.setVisible(True)
+        control.setLabel(label)
+
+    def hideDevices(self, first=controlid.room.DEVICE_FIRST):
+        for controlID in range(first, controlid.room.DEVICE_LAST + 1):
+            button = self.getControl(controlID)
+            button.setVisible(False)
+
+
+
 

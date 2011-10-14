@@ -63,7 +63,23 @@
       </control>
       <control type="button" id="11011">
       </control>                            
-      
+      <control type="button" id="11012">
+      </control>
+      <control type="button" id="11013">
+      </control>      
+      <control type="button" id="11014">
+      </control>
+      <control type="button" id="11015">
+      </control>      
+      <control type="button" id="11016">
+      </control>
+      <control type="button" id="11017">
+      </control>      
+      <control type="button" id="11018">
+      </control>
+      <control type="button" id="11019">
+      </control>      
+     
     </control>
     
     <control type="grouplist" id="10104">
