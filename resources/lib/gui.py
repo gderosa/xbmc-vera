@@ -34,6 +34,12 @@ class GUI( xbmcgui.WindowXML ):
                     vera=self.vera, room=room_) 
             roomUI.doModal()
             del roomUI
+        elif    controlID == controlid.ROOM_NONE:
+            roomUI = RoomUI(
+                    'room.xml', __cwd__, 'Default',
+                    vera=self.vera, room=None) 
+            roomUI.doModal()
+            del roomUI
 
 
     def updateRooms(self):
@@ -71,7 +77,10 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
     def onInit(self):
         self.hideDevices()
         label = self.getControl(10101)
-        label.setLabel(self.room['name'])
+        if self.room:
+            label.setLabel(self.room['name'])
+        else:
+            label.setLabel('Devices not in any room')
         self.updateDevices()
 
     def onClick(self, controlID):
@@ -82,9 +91,14 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
 
         controlID = controlid.room.DEVICE_FIRST
         for device in devices:
-            if device['room'] == self.room['id'] :
-                self.showLabel(controlID, device['name'])
-                controlID += 1
+            if self.room:
+                if device['room'] == self.room['id'] :
+                    self.showLabel(controlID, device['name'])
+                    controlID += 1
+            else:
+                if device['room'] == 0:
+                    self.showLabel(controlID, device['name'])
+                    controlID += 1
 
         #self.hideDevices(controlID)
 
