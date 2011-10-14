@@ -10,7 +10,7 @@ __cwd__     = __addon__.getAddonInfo('path')
 
 class GUI( xbmcgui.WindowXML ):
     def __init__(self, *args, **kwargs):
-        pass
+        self.buttonIDToRoom = {}
 
     def onInit(self):
         self.updateVera()
@@ -34,9 +34,12 @@ class GUI( xbmcgui.WindowXML ):
         controlID = controlid.ROOM_FIRST
         for room in rooms:
             self.showLabel(controlID, room['name'])
+            self.buttonIDToRoom[controlID] = room
             controlID += 1
 
         self.hideRooms(controlID)
+
+        print 'vera: buttonIDToRoom = ' + str(self.buttonIDToRoom)
 
     def showLabel(self, controlID, label):
         control = self.getControl(controlID)
