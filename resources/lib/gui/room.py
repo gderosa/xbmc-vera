@@ -2,7 +2,7 @@ import xbmc
 import xbmcgui
 import xbmcaddon
 
-import vera
+import vera.device.category
 
 import controlid.room
 
@@ -29,14 +29,15 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
 
         controlID = controlid.room.DEVICE_FIRST
         for device in devices:
-            if self.room:
-                if device['room'] == self.room['id'] :
-                    self.showLabel(controlID, device['name'])
-                    controlID += 1
-            else:
-                if device['room'] == 0:
-                    self.showLabel(controlID, device['name'])
-                    controlID += 1
+            if device['category'] in vera.device.category.DISPLAYABLE:
+                if self.room:
+                    if device['room'] == self.room['id'] :
+                        self.showLabel(controlID, device['name'])
+                        controlID += 1
+                else:
+                    if device['room'] == 0:
+                        self.showLabel(controlID, device['name'])
+                        controlID += 1
 
     def showLabel(self, controlID, label): # TODO: DRY
         control = self.getControl(controlID)
