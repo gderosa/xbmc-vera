@@ -21,7 +21,8 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
         self.updateDevices()
 
     def onClick(self, controlID):
-        pass
+        if controlID == controlid.room.EXIT:
+            self.close()
 
     def updateDevices(self):
         devices = self.vera.data['devices']
