@@ -87,9 +87,6 @@
       <posy>210</posy>
       <onleft>10103</onleft>
       
-      <control type="button" id="12002">    
-        <label>Get Data</label>      
-      </control>            
       <control type="button" id="19999">    
         <label>Exit</label>      
       </control>      
