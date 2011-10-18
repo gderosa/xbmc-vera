@@ -1,8 +1,8 @@
 from vera.device.category import *
 
 CATEGORY_ICONS = {
-        DIMMABLE_LIGHT:     'devices/Dimmable_Light_50.png',
-        SWITCH:             'devices/Binary_Light_100.png',
+        DIMMABLE_LIGHT:     'devices/Dimmable_Light.png',
+        SWITCH:             'devices/Binary_Light.png',
         MOTION_SENSOR:      'devices/Motion_Sensor.png',
         THERMOSTAT:         'devices/Thermostat.png',
         CAMERA:             'devices/Ip_Camera.png',
