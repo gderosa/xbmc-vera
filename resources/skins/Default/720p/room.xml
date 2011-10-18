@@ -43,14 +43,15 @@
         <height>68</height>
         <control type="image" id="22001">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control>     
         <control type="button" id="11001">  
           <posx>0</posx>
           <posy>0</posy>
           <width>350</width>
           <height>68</height>
-          <label>(no devices)</label> 
+          <label>(no devices)</label>
+          <onup>11019</onup> 
           <ondown>11002</ondown> 
         </control>
       </control>
@@ -59,7 +60,7 @@
         <height>68</height>
         <control type="image" id="22002">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control> 
         <control type="button" id="11002">
           <posx>0</posx>
@@ -75,7 +76,7 @@
         <height>68</height>
         <control type="image" id="22003">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control>     
         <control type="button" id="11003">  
           <posx>0</posx>
@@ -91,7 +92,7 @@
         <height>68</height>
         <control type="image" id="22004">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control> 
         <control type="button" id="11004">
           <posx>0</posx>
@@ -107,7 +108,7 @@
         <height>68</height>
         <control type="image" id="22005">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control>     
         <control type="button" id="11005">  
           <posx>0</posx>
@@ -123,7 +124,7 @@
         <height>68</height>
         <control type="image" id="22006">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control> 
         <control type="button" id="11006">
           <posx>0</posx>
@@ -139,7 +140,7 @@
         <height>68</height>
         <control type="image" id="22007">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control>     
         <control type="button" id="11007">  
           <posx>0</posx>
@@ -155,7 +156,7 @@
         <height>68</height>
         <control type="image" id="22008">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control> 
         <control type="button" id="11008">
           <posx>0</posx>
@@ -171,7 +172,7 @@
         <height>68</height>
         <control type="image" id="22009">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control> 
         <control type="button" id="11009">
           <posx>0</posx>
@@ -187,7 +188,7 @@
         <height>68</height>
         <control type="image" id="22010">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control> 
         <control type="button" id="11010">
           <posx>0</posx>
@@ -203,7 +204,7 @@
         <height>68</height>
         <control type="image" id="22011">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control>     
         <control type="button" id="11011">  
           <posx>0</posx>
@@ -220,7 +221,7 @@
         <height>68</height>
         <control type="image" id="22012">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control> 
         <control type="button" id="11012">
           <posx>0</posx>
@@ -236,7 +237,7 @@
         <height>68</height>
         <control type="image" id="22013">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control>     
         <control type="button" id="11013">  
           <posx>0</posx>
@@ -252,7 +253,7 @@
         <height>68</height>
         <control type="image" id="22014">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control> 
         <control type="button" id="11014">
           <posx>0</posx>
@@ -268,7 +269,7 @@
         <height>68</height>
         <control type="image" id="22015">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control>     
         <control type="button" id="11015">  
           <posx>0</posx>
@@ -284,7 +285,7 @@
         <height>68</height>
         <control type="image" id="22016">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control> 
         <control type="button" id="11016">
           <posx>0</posx>
@@ -300,7 +301,7 @@
         <height>68</height>
         <control type="image" id="22017">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control>     
         <control type="button" id="11017">  
           <posx>0</posx>
@@ -316,7 +317,7 @@
         <height>68</height>
         <control type="image" id="22018">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control> 
         <control type="button" id="11018">
           <posx>0</posx>
@@ -332,7 +333,7 @@
         <height>68</height>
         <control type="image" id="22019">
           <texture>devices/device.png</texture>
-          <posx>310</posx>
+          <posx>305</posx>
         </control> 
         <control type="button" id="11019">
           <posx>0</posx>

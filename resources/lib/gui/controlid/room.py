@@ -9,3 +9,8 @@ EXIT                = 19999
 
 def buttonToGroup(buttonID):
     return buttonID + 22000
+
+def buttonToIcon(buttonID):
+    return buttonID + 11000
+
+
