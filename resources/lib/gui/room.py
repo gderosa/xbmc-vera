@@ -5,6 +5,8 @@ import xbmcaddon
 import vera.device.category
 
 import gui.controlid.room as controlid
+import gui.position.room.device
+import gui.size.room.device
 
 __addon__   = xbmcaddon.Addon()
 __cwd__     = __addon__.getAddonInfo('path')
@@ -46,9 +48,9 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
         control.setLabel(label)
 
     def putIcon(self, controlID, device):
-        control = self.getControl(controlID)
-        x, y = control.getPosition() # returns 0, 0 !!!
-        icon = xbmcgui.ControlImage(x, (controlID - controlid.DEVICE_FIRST)*70, 32, 32, __cwd__ + '/resources/skins/default/media/devices/Binary_Light_100.png')
+        posX, posY = gui.position.room.device.icon(controlID)
+        sizX, sizY = gui.size.room.device.ICON
+        icon = xbmcgui.ControlImage(posX, posY, sizX, sizY, __cwd__ + '/resources/skins/default/media/devices/Binary_Light_100.png')
         self.addControl(icon)
 
     def hideDevices(self, first=controlid.DEVICE_FIRST):
