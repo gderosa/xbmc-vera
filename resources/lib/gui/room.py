@@ -5,7 +5,7 @@ import xbmcaddon
 import vera.device.category
 
 import gui.controlid.room as controlid
-import gui.icons
+import gui.device
 
 class RoomUI( xbmcgui.WindowXMLDialog ):
     def __init__(self, *args, **kwargs):
@@ -46,7 +46,8 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
     def setButtonIcon(self, buttonID, device):
         iconID = controlid.buttonToIcon(buttonID)
         icon = self.getControl(iconID)
-        image = gui.icons.DEVICE_CATEGORY[device['category']]
+        #image = gui.icons.DEVICE_CATEGORY[device['category']]
+        image = gui.device.icon(device)
         icon.setImage(image) 
 
     def showButtonIconGroup(self, buttonID):
