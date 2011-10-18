@@ -27,24 +27,29 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
     def updateDevices(self):
         devices = self.vera.data['devices']
 
-        controlID = controlid.DEVICE_FIRST
+        buttonID = controlid.DEVICE_FIRST_BUTTON
         for device in devices:
             if device['category'] in vera.device.category.DISPLAYABLE:
                 if \
                         ( self.room and device['room'] == self.room['id'] ) or \
                         ( not self.room and device['room'] == 0 ) :
-                    self.showLabel(controlID, device['name'])
-                    controlID += 1
+                    self.showButton(buttonID, device['name'])
+                    buttonID += 1
 
-    def showLabel(self, controlID, label): # TODO: DRY
-        control = self.getControl(controlID)
-        control.setVisible(True)
-        control.setLabel(label)
+    def showButton(self, buttonID, label):
+        button = self.getControl(buttonID)
+        button.setLabel(label)
+        self.showButtonIconGroup(buttonID) 
 
-    def hideDevices(self, first=controlid.DEVICE_FIRST):
-        for controlID in range(first, controlid.DEVICE_LAST + 1):
-            button = self.getControl(controlID)
-            button.setVisible(False)
+    def showButtonIconGroup(self, buttonID):
+        groupID = controlid.buttonToGroup(buttonID) 
+        group = self.getControl(groupID)
+        group.setVisible(True)
+
+    def hideDevices(self, first=controlid.DEVICE_FIRST_GROUP):
+        for groupID in range(first, controlid.DEVICE_LAST_GROUP + 1):
+            group = self.getControl(groupID)
+            group.setVisible(False)
 
 
 
