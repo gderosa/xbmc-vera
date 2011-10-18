@@ -6,6 +6,9 @@ import vera.device.category
 
 import gui.controlid.room as controlid
 
+__addon__   = xbmcaddon.Addon()
+__cwd__     = __addon__.getAddonInfo('path')
+
 class RoomUI( xbmcgui.WindowXMLDialog ):
     def __init__(self, *args, **kwargs):
         self.room = kwargs['room']
@@ -34,12 +37,19 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
                         ( self.room and device['room'] == self.room['id'] ) or \
                         ( not self.room and device['room'] == 0 ) :
                     self.showLabel(controlID, device['name'])
+                    self.putIcon(controlID, device)
                     controlID += 1
 
     def showLabel(self, controlID, label): # TODO: DRY
         control = self.getControl(controlID)
         control.setVisible(True)
         control.setLabel(label)
+
+    def putIcon(self, controlID, device):
+        control = self.getControl(controlID)
+        x, y = control.getPosition() # returns 0, 0 !!!
+        icon = xbmcgui.ControlImage(x, (controlID - controlid.DEVICE_FIRST)*70, 32, 32, __cwd__ + '/resources/skins/default/media/devices/Binary_Light_100.png')
+        self.addControl(icon)
 
     def hideDevices(self, first=controlid.DEVICE_FIRST):
         for controlID in range(first, controlid.DEVICE_LAST + 1):
