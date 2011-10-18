@@ -38,12 +38,16 @@
       <scrolltime>0</scrolltime>
       <orientation>vertical</orientation>
       <onright>10104</onright>
-      
+
+
+     
       <control type="button" id="11001">  
         <width>350</width>
         <height>68</height>
         <label>(no devices)</label>  
       </control>
+
+
       <!-- I definitely want a CSS ;-) --> 
       <control type="button" id="11002">
         <width>350</width>
@@ -130,6 +134,20 @@
       </control>      
       
     </control>
+
+<!--
+    <control type="image" id="301">
+      <posx>0</posx>
+      <posy>94</posy> 
+      <texture>devices/Binary_Light_100.png</texture>
+    </control>
+
+    <control type="image" id="302">
+      <posx>0</posx>
+      <posy>104</posy> 
+      <texture>devices/Binary_Light_100.png</texture>
+    </control>
+-->  
     
   </controls>
 
