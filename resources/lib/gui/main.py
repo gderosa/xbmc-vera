@@ -4,7 +4,7 @@ import xbmcaddon
 
 import vera
 
-import controlid 
+import gui.controlid as controlid
 
 __addon__   = xbmcaddon.Addon()
 __cwd__     = __addon__.getAddonInfo('path')

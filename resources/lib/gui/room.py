@@ -4,7 +4,7 @@ import xbmcaddon
 
 import vera.device.category
 
-import controlid.room
+import gui.controlid.room as controlid
 
 class RoomUI( xbmcgui.WindowXMLDialog ):
     def __init__(self, *args, **kwargs):
@@ -21,13 +21,13 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
         self.updateDevices()
 
     def onClick(self, controlID):
-        if controlID == controlid.room.EXIT:
+        if controlID == controlid.EXIT:
             self.close()
 
     def updateDevices(self):
         devices = self.vera.data['devices']
 
-        controlID = controlid.room.DEVICE_FIRST
+        controlID = controlid.DEVICE_FIRST
         for device in devices:
             if device['category'] in vera.device.category.DISPLAYABLE:
                 if self.room:
@@ -44,8 +44,8 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
         control.setVisible(True)
         control.setLabel(label)
 
-    def hideDevices(self, first=controlid.room.DEVICE_FIRST):
-        for controlID in range(first, controlid.room.DEVICE_LAST + 1):
+    def hideDevices(self, first=controlid.DEVICE_FIRST):
+        for controlID in range(first, controlid.DEVICE_LAST + 1):
             button = self.getControl(controlID)
             button.setVisible(False)
 
