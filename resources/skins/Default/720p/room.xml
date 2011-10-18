@@ -40,44 +40,82 @@
       <onright>10104</onright>
       
       <control type="button" id="11001">  
+        <width>350</width>
+        <height>68</height>
         <label>(no devices)</label>  
       </control>
       
       <control type="button" id="11002">
+        <width>350</width>
+        <height>68</height>
       </control>
       <control type="button" id="11003">
+        <width>350</width>
+        <height>68</height>
       </control>      
       <control type="button" id="11004">
+        <width>350</width>
+        <height>68</height>
       </control>
       <control type="button" id="11005">
+        <width>350</width>
+        <height>68</height>
       </control>      
       <control type="button" id="11006">
+        <width>350</width>
+        <height>68</height>
       </control>
       <control type="button" id="11007">
+        <width>350</width>
+        <height>68</height>
       </control>      
       <control type="button" id="11008">
+        <width>350</width>
+        <height>68</height>
       </control>
       <control type="button" id="11009">
+        <width>350</width>
+        <height>68</height>
       </control>      
       <control type="button" id="11010">
+        <width>350</width>
+        <height>68</height>
       </control>
       <control type="button" id="11011">
+        <width>350</width>
+        <height>68</height>
       </control>                            
       <control type="button" id="11012">
+        <width>350</width>
+        <height>68</height>
       </control>
       <control type="button" id="11013">
+        <width>350</width>
+        <height>68</height>
       </control>      
       <control type="button" id="11014">
+        <width>350</width>
+        <height>68</height>
       </control>
       <control type="button" id="11015">
+        <width>350</width>
+        <height>68</height>
       </control>      
       <control type="button" id="11016">
+        <width>350</width>
+        <height>68</height>
       </control>
       <control type="button" id="11017">
+        <width>350</width>
+        <height>68</height>
       </control>      
       <control type="button" id="11018">
+        <width>350</width>
+        <height>68</height>
       </control>
       <control type="button" id="11019">
+        <width>350</width>
+        <height>68</height>
       </control>      
      
     </control>
