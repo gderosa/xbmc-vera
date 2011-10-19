@@ -1,3 +1,5 @@
+import re
+
 import xbmc
 import xbmcgui
 import xbmcaddon
@@ -52,10 +54,19 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
 
     def setButtonComment(self, buttonID, device):
         if 'comment' in device.keys(): 
-            commentID = controlid.buttonToComment(buttonID)
-            comment = self.getControl(commentID) 
-            text = '[I][COLOR grey]%s[/COLOR][/I]' % device['comment']
-            comment.setLabel(text)
+            
+            labelID = controlid.buttonToComment(buttonID)
+            label = self.getControl(labelID)
+
+            # turn '_Light: My message' into 'My message'
+            # with or w/o leading underscore
+            text = re.sub(                          \
+                    '^_?' + device['name'] + ': ',  \
+                    '',                             \
+                    device['comment']               \
+            )
+            textWithTags = '[I][COLOR grey]%s[/COLOR][/I]' % text
+            label.setLabel(textWithTags)
 
     def showButtonIconGroup(self, buttonID):
         groupID = controlid.buttonToGroup(buttonID) 
