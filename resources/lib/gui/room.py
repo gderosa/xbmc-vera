@@ -42,9 +42,16 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
     def showButton(self, buttonID, device):
         button = self.getControl(buttonID)
         button.setLabel(device['name'])
-        self.setButtonIcon(buttonID, device) 
-        self.setButtonComment(buttonID, device)
+
+        self.setButtonIcon(     buttonID, device    ) 
+        self.setButtonComment(  buttonID, device    )
+        self.setStateColor(     buttonID, device    ) 
+
         self.showButtonIconGroup(buttonID) 
+
+    def setStateColor(self, buttonID, device):
+        button = self.getControl(buttonID)
+        pass 
 
     def setButtonIcon(self, buttonID, device):
         iconID = controlid.buttonToIcon(buttonID)
