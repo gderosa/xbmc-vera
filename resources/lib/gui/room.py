@@ -41,14 +41,21 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
         button = self.getControl(buttonID)
         button.setLabel(device['name'])
         self.setButtonIcon(buttonID, device) 
+        self.setButtonComment(buttonID, device)
         self.showButtonIconGroup(buttonID) 
 
     def setButtonIcon(self, buttonID, device):
         iconID = controlid.buttonToIcon(buttonID)
         icon = self.getControl(iconID)
-        #image = gui.icons.DEVICE_CATEGORY[device['category']]
         image = gui.device.icon(device)
         icon.setImage(image) 
+
+    def setButtonComment(self, buttonID, device):
+        if 'comment' in device.keys(): 
+            commentID = controlid.buttonToComment(buttonID)
+            comment = self.getControl(commentID) 
+            text = '[I][COLOR grey]%s[/COLOR][/I]' % device['comment']
+            comment.setLabel(text)
 
     def showButtonIconGroup(self, buttonID):
         groupID = controlid.buttonToGroup(buttonID) 

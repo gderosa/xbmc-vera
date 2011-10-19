@@ -13,4 +13,7 @@ def buttonToGroup(buttonID):
 def buttonToIcon(buttonID):
     return buttonID + 11000
 
+def buttonToComment(buttonID):
+    return buttonID + 33000
+
 

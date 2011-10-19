@@ -62,6 +62,11 @@
           <ondown>11002</ondown>
           <onright>10104</onright> 
         </control>
+        <control type="label" id="44001">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
+        </control>
       </control>
 
       <control type="group" id="33002">
@@ -76,6 +81,11 @@
           <height>68</height>
           <onup>11001</onup>
           <ondown>11003</ondown>
+        </control>
+        <control type="label" id="44002">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
         </control>
       </control>
 
@@ -92,6 +102,11 @@
           <onup>11002</onup>
           <ondown>11004</ondown> 
         </control>
+        <control type="label" id="44003">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
+        </control>        
       </control>
 
       <control type="group" id="33004">
@@ -106,6 +121,11 @@
           <height>68</height>
           <onup>11003</onup>
           <ondown>11005</ondown>
+        </control>
+        <control type="label" id="44004">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
         </control>
       </control>
 
@@ -122,6 +142,11 @@
           <onup>11004</onup>
           <ondown>11006</ondown> 
         </control>
+        <control type="label" id="44005">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
+        </control>
       </control>
 
       <control type="group" id="33006">
@@ -136,6 +161,11 @@
           <height>68</height>
           <onup>11005</onup>
           <ondown>11007</ondown>
+        </control>
+        <control type="label" id="44006">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
         </control>
       </control>
 
@@ -152,6 +182,11 @@
           <onup>11006</onup>
           <ondown>11008</ondown> 
         </control>
+        <control type="label" id="44007">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
+        </control>
       </control>
 
       <control type="group" id="33008">
@@ -166,6 +201,11 @@
           <height>68</height>
           <onup>11007</onup>
           <ondown>11009</ondown>
+        </control>
+        <control type="label" id="44008">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
         </control>
       </control>
 
@@ -182,6 +222,11 @@
           <onup>11008</onup>
           <ondown>11010</ondown>
         </control>
+        <control type="label" id="44009">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
+        </control>
       </control>
 
       <control type="group" id="33010">
@@ -196,6 +241,11 @@
           <height>68</height>
           <onup>11009</onup>
           <ondown>11011</ondown>
+        </control>
+        <control type="label" id="44010">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
         </control>
       </control>
 
@@ -213,6 +263,11 @@
           <onup>11010</onup>
           <ondown>11012</ondown> 
         </control>
+        <control type="label" id="44011">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
+        </control>
       </control>
 
       <control type="group" id="33012">
@@ -227,6 +282,11 @@
           <height>68</height>
           <onup>11011</onup>
           <ondown>11013</ondown>
+        </control>
+        <control type="label" id="44012">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
         </control>
       </control>
 
@@ -243,6 +303,11 @@
           <onup>11012</onup>
           <ondown>11014</ondown> 
         </control>
+        <control type="label" id="44013">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
+        </control>
       </control>
 
       <control type="group" id="33014">
@@ -257,6 +322,11 @@
           <height>68</height>
           <onup>11013</onup>
           <ondown>11015</ondown>
+        </control>
+        <control type="label" id="44014">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
         </control>
       </control>
 
@@ -273,6 +343,11 @@
           <onup>11014</onup>
           <ondown>11016</ondown> 
         </control>
+        <control type="label" id="44015">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
+        </control>
       </control>
 
       <control type="group" id="33016">
@@ -287,6 +362,11 @@
           <height>68</height>
           <onup>11015</onup>
           <ondown>11017</ondown>
+        </control>
+        <control type="label" id="44016">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
         </control>
       </control>
 
@@ -303,6 +383,11 @@
           <onup>11016</onup>
           <ondown>11018</ondown> 
         </control>
+        <control type="label" id="44017">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
+        </control>
       </control>
 
       <control type="group" id="33018">
@@ -318,6 +403,11 @@
           <onup>11017</onup>
           <ondown>11019</ondown>
         </control>
+        <control type="label" id="44018">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
+        </control>
       </control>
 
       <control type="group" id="33019">
@@ -332,6 +422,11 @@
           <height>68</height>
           <onup>11018</onup>
           <ondown>11001</ondown>
+        </control>
+        <control type="label" id="44019">
+          <posx>4</posx>
+          <posy>49</posy>
+          <font>font10</font>
         </control>
       </control>
     
