@@ -1,4 +1,5 @@
-from vera.device.category import *
+from vera.device.category   import *
+from vera.device.state      import *
 
 CATEGORY_ICONS = {
         DIMMABLE_LIGHT:     'devices/Dimmable_Light.png',
@@ -35,6 +36,18 @@ def icon(device):
     else: # icon does not depend upon status
         return CATEGORY_ICONS[category] 
 
-
+def stateBgImage(device):
+    if 'state' in device.keys():
+        state = device['state']
+        if      state in NONE:
+            return 'devices/state_grey.png'
+        elif    state in PENDING:
+            return 'devices/state_blue.png'
+        elif    state in ERROR:
+            return 'devices/state_red.png'
+        elif    state in SUCCES:
+            return 'devices/state_green.png'
+    else:
+        return 'devices/state_grey.png'
 
 

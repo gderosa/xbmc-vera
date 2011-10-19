@@ -50,9 +50,14 @@
 
       <control py:for="buttonID in range(11001, 11019+1)" type="group" id="${buttonID + 22000}">
         <height>68</height>
-        <control type="image" id="${buttonID + 11000}">
+        <control type="image" id="${buttonID + 11000}"><!-- icon -->
           <posx>345</posx>
         </control>     
+        <control type="image" id="${buttonID + 44000}"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
+        </control>
         <control type="button" id="${buttonID}">  
           <posx>0</posx>
           <posy>0</posy>
@@ -69,8 +74,6 @@
           <font>font10</font>
         </control>
       </control>
-
-
     
     </control>
     

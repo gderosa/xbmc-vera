@@ -46,8 +46,13 @@
       </control>
       <control type="group" id="33001">
         <height>68</height>
-        <control type="image" id="22001">
+        <control type="image" id="22001"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55001"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11001">
           <posx>0</posx>
@@ -66,8 +71,13 @@
         </control>
       </control><control type="group" id="33002">
         <height>68</height>
-        <control type="image" id="22002">
+        <control type="image" id="22002"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55002"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11002">
           <posx>0</posx>
@@ -86,8 +96,13 @@
         </control>
       </control><control type="group" id="33003">
         <height>68</height>
-        <control type="image" id="22003">
+        <control type="image" id="22003"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55003"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11003">
           <posx>0</posx>
@@ -106,8 +121,13 @@
         </control>
       </control><control type="group" id="33004">
         <height>68</height>
-        <control type="image" id="22004">
+        <control type="image" id="22004"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55004"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11004">
           <posx>0</posx>
@@ -126,8 +146,13 @@
         </control>
       </control><control type="group" id="33005">
         <height>68</height>
-        <control type="image" id="22005">
+        <control type="image" id="22005"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55005"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11005">
           <posx>0</posx>
@@ -146,8 +171,13 @@
         </control>
       </control><control type="group" id="33006">
         <height>68</height>
-        <control type="image" id="22006">
+        <control type="image" id="22006"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55006"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11006">
           <posx>0</posx>
@@ -166,8 +196,13 @@
         </control>
       </control><control type="group" id="33007">
         <height>68</height>
-        <control type="image" id="22007">
+        <control type="image" id="22007"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55007"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11007">
           <posx>0</posx>
@@ -186,8 +221,13 @@
         </control>
       </control><control type="group" id="33008">
         <height>68</height>
-        <control type="image" id="22008">
+        <control type="image" id="22008"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55008"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11008">
           <posx>0</posx>
@@ -206,8 +246,13 @@
         </control>
       </control><control type="group" id="33009">
         <height>68</height>
-        <control type="image" id="22009">
+        <control type="image" id="22009"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55009"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11009">
           <posx>0</posx>
@@ -226,8 +271,13 @@
         </control>
       </control><control type="group" id="33010">
         <height>68</height>
-        <control type="image" id="22010">
+        <control type="image" id="22010"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55010"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11010">
           <posx>0</posx>
@@ -246,8 +296,13 @@
         </control>
       </control><control type="group" id="33011">
         <height>68</height>
-        <control type="image" id="22011">
+        <control type="image" id="22011"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55011"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11011">
           <posx>0</posx>
@@ -266,8 +321,13 @@
         </control>
       </control><control type="group" id="33012">
         <height>68</height>
-        <control type="image" id="22012">
+        <control type="image" id="22012"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55012"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11012">
           <posx>0</posx>
@@ -286,8 +346,13 @@
         </control>
       </control><control type="group" id="33013">
         <height>68</height>
-        <control type="image" id="22013">
+        <control type="image" id="22013"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55013"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11013">
           <posx>0</posx>
@@ -306,8 +371,13 @@
         </control>
       </control><control type="group" id="33014">
         <height>68</height>
-        <control type="image" id="22014">
+        <control type="image" id="22014"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55014"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11014">
           <posx>0</posx>
@@ -326,8 +396,13 @@
         </control>
       </control><control type="group" id="33015">
         <height>68</height>
-        <control type="image" id="22015">
+        <control type="image" id="22015"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55015"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11015">
           <posx>0</posx>
@@ -346,8 +421,13 @@
         </control>
       </control><control type="group" id="33016">
         <height>68</height>
-        <control type="image" id="22016">
+        <control type="image" id="22016"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55016"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11016">
           <posx>0</posx>
@@ -366,8 +446,13 @@
         </control>
       </control><control type="group" id="33017">
         <height>68</height>
-        <control type="image" id="22017">
+        <control type="image" id="22017"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55017"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11017">
           <posx>0</posx>
@@ -386,8 +471,13 @@
         </control>
       </control><control type="group" id="33018">
         <height>68</height>
-        <control type="image" id="22018">
+        <control type="image" id="22018"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55018"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11018">
           <posx>0</posx>
@@ -406,8 +496,13 @@
         </control>
       </control><control type="group" id="33019">
         <height>68</height>
-        <control type="image" id="22019">
+        <control type="image" id="22019"><!-- icon -->
           <posx>345</posx>
+        </control>
+        <control type="image" id="55019"><!-- state background -->
+          <height>26</height>
+          <posx>-8</posx>
+          <posy>40</posy>
         </control>
         <control type="button" id="11019">
           <posx>0</posx>

@@ -50,8 +50,10 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
         self.showButtonIconGroup(buttonID) 
 
     def setStateColor(self, buttonID, device):
-        button = self.getControl(buttonID)
-        pass 
+        stateBgID = controlid.buttonToStateBg(buttonID) 
+        bgImage = self.getControl(stateBgID) 
+        bgImageFile = gui.device.stateBgImage(device)
+        bgImage.setImage(bgImageFile) 
 
     def setButtonIcon(self, buttonID, device):
         iconID = controlid.buttonToIcon(buttonID)
