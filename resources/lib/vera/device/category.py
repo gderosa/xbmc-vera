@@ -1,6 +1,8 @@
 # http://wiki.mios.com/index.php/Luup_Device_Categories
 # http://wiki.micasaverde.com/index.php/UI_Simple#Status_of_the_device_or_scene_and_control_buttons
 
+GENERIC             =  0
+
 INTERFACE           =  1
 DIMMABLE_LIGHT      =  2
 SWITCH              =  3
