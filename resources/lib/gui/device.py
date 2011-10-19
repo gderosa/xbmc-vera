@@ -15,6 +15,14 @@ CATEGORY_ICONS = {
         POWER_METER:        'devices/Power_Meter.png'
 }
 
+# NOTE: NONE, PENDING, ERROR and SUCCESS are tuples!
+STATE_BACKGROUNDS = {
+        NONE:               'devices/state_grey.png',
+        PENDING:            'devices/state_blue.png',
+        ERROR:              'devices/state_red.png',
+        SUCCESS:            'devices/state_green.png'
+}
+
 def icon(device):
     category = device['category']
     if      category == DIMMABLE_LIGHT:
@@ -38,16 +46,10 @@ def icon(device):
 
 def stateBgImage(device):
     if 'state' in device.keys():
-        state = device['state']
-        if      state in NONE:
-            return 'devices/state_grey.png'
-        elif    state in PENDING:
-            return 'devices/state_blue.png'
-        elif    state in ERROR:
-            return 'devices/state_red.png'
-        elif    state in SUCCES:
-            return 'devices/state_green.png'
+        for type_ in (NONE, PENDING, ERROR, SUCCESS):
+            if device['state'] in type_: 
+                return STATE_BACKGROUNDS[ type_ ]  
     else:
-        return 'devices/state_grey.png'
+        return STATE_BACKGROUNDS[ NONE ]  
 
 
