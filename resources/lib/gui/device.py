@@ -85,6 +85,12 @@ def essentialInfo(device, temperature_unit=''):
             return u'Mode: %s  [COLOR grey]Heat: %s[/COLOR]  Cool: %s  (\xb0%s)' % values
         else:
             return u'Mode: %s  Heat: %s  Cool: %s  (\xb0%s)'                     % values
+    if device['category'] == DOOR_LOCK:
+        if 'locked' in device.keys():
+            if int(device['locked']):
+                return 'Locked'
+            else:
+                return 'Unlocked'
     if device['category'] == WINDOW_COVERING:
         return 'Level: %s' % device['level'] 
     if device['category'] == HUMIDITY_SENSOR:
