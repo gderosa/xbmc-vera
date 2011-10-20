@@ -1,3 +1,6 @@
+# http://wiki.micasaverde.com/index.php/Luup_Variables
+# http://wiki.micasaverde.com/index.php/UI_Simple#Status_of_the_device_or_scene_and_control_buttons
+
 from vera.device.category   import *
 from vera.device.state      import *
 
@@ -16,7 +19,7 @@ CATEGORY_ICONS = {
         GENERIC:            'devices/device.png'
 }
 
-# NOTE: NONE, PENDING, ERROR and SUCCESS are tuples!
+# NOTE: dictionary keys are tuples!
 STATE_BACKGROUNDS = {
         NONE:               'devices/state_grey.png',
         PENDING:            'devices/state_blue.png',
