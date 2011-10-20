@@ -48,7 +48,9 @@
         </control>
       </control>
 
-      <control py:for="buttonID in range(11001, 11019+1)" type="group" id="${buttonID + 22000}">
+<py:for each="buttonID in range(11001, 11019+1)" xml:space="preserve">
+
+      <control type="group" id="${buttonID + 22000}">
         <height>68</height>
         <control type="image" id="${buttonID + 11000}"><!-- icon -->
           <posx>345</posx>
@@ -74,7 +76,9 @@
           <font>font10</font>
         </control>
       </control>
-    
+
+</py:for>
+
     </control>
     
     <control type="grouplist" id="10104">

@@ -69,7 +69,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33002">
+      </control>
+      <control type="group" id="33002">
         <height>68</height>
         <control type="image" id="22002"><!-- icon -->
           <posx>345</posx>
@@ -94,7 +95,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33003">
+      </control>
+      <control type="group" id="33003">
         <height>68</height>
         <control type="image" id="22003"><!-- icon -->
           <posx>345</posx>
@@ -119,7 +121,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33004">
+      </control>
+      <control type="group" id="33004">
         <height>68</height>
         <control type="image" id="22004"><!-- icon -->
           <posx>345</posx>
@@ -144,7 +147,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33005">
+      </control>
+      <control type="group" id="33005">
         <height>68</height>
         <control type="image" id="22005"><!-- icon -->
           <posx>345</posx>
@@ -169,7 +173,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33006">
+      </control>
+      <control type="group" id="33006">
         <height>68</height>
         <control type="image" id="22006"><!-- icon -->
           <posx>345</posx>
@@ -194,7 +199,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33007">
+      </control>
+      <control type="group" id="33007">
         <height>68</height>
         <control type="image" id="22007"><!-- icon -->
           <posx>345</posx>
@@ -219,7 +225,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33008">
+      </control>
+      <control type="group" id="33008">
         <height>68</height>
         <control type="image" id="22008"><!-- icon -->
           <posx>345</posx>
@@ -244,7 +251,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33009">
+      </control>
+      <control type="group" id="33009">
         <height>68</height>
         <control type="image" id="22009"><!-- icon -->
           <posx>345</posx>
@@ -269,7 +277,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33010">
+      </control>
+      <control type="group" id="33010">
         <height>68</height>
         <control type="image" id="22010"><!-- icon -->
           <posx>345</posx>
@@ -294,7 +303,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33011">
+      </control>
+      <control type="group" id="33011">
         <height>68</height>
         <control type="image" id="22011"><!-- icon -->
           <posx>345</posx>
@@ -319,7 +329,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33012">
+      </control>
+      <control type="group" id="33012">
         <height>68</height>
         <control type="image" id="22012"><!-- icon -->
           <posx>345</posx>
@@ -344,7 +355,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33013">
+      </control>
+      <control type="group" id="33013">
         <height>68</height>
         <control type="image" id="22013"><!-- icon -->
           <posx>345</posx>
@@ -369,7 +381,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33014">
+      </control>
+      <control type="group" id="33014">
         <height>68</height>
         <control type="image" id="22014"><!-- icon -->
           <posx>345</posx>
@@ -394,7 +407,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33015">
+      </control>
+      <control type="group" id="33015">
         <height>68</height>
         <control type="image" id="22015"><!-- icon -->
           <posx>345</posx>
@@ -419,7 +433,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33016">
+      </control>
+      <control type="group" id="33016">
         <height>68</height>
         <control type="image" id="22016"><!-- icon -->
           <posx>345</posx>
@@ -444,7 +459,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33017">
+      </control>
+      <control type="group" id="33017">
         <height>68</height>
         <control type="image" id="22017"><!-- icon -->
           <posx>345</posx>
@@ -469,7 +485,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33018">
+      </control>
+      <control type="group" id="33018">
         <height>68</height>
         <control type="image" id="22018"><!-- icon -->
           <posx>345</posx>
@@ -494,7 +511,8 @@
           <posy>49</posy>
           <font>font10</font>
         </control>
-      </control><control type="group" id="33019">
+      </control>
+      <control type="group" id="33019">
         <height>68</height>
         <control type="image" id="22019"><!-- icon -->
           <posx>345</posx>
