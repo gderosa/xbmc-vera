@@ -58,20 +58,26 @@ def stateBgImage(device):
 
 def essentialInfo(device, temperature_unit='F'):
     if device['category'] == DIMMABLE_LIGHT:
-        try:
+        if 'watts' in device.keys():
             return '%sW' % device['watts']
-        except KeyError:
+        else:
             return '%s%%' % device['level']
     if device['category'] in (BINARY_LIGHT, POWER_METER):
-        try:
+        if 'watts' in device.keys():
             return '%sW' % device['watts']
-        except KeyError:
-            pass
-    if device['category'] == LIGHT_SENSOR:
-        return 'Level: %s' % device['light']
+    if device['category'] == MOTION_SENSOR:
+        if 'armed' in device.keys():
+            if device['armed'] == '1':
+                return 'Armed'
+            if device['armed'] == '0':
+                return 'Bypass'
+    if device['category'] == WINDOW_COVERING:
+        return 'Level: %s' % device['level'] 
+    if device['category'] == HUMIDITY_SENSOR:
+        return '%s%%' % device['humidity']       
     if device['category'] == TEMPERATURE_SENSOR:
         return u'%s\xb0%s' % (device['temperature'], temperature_unit) # degree sign
-    if device['category'] == HUMIDITY_SENSOR:
-        return '%s%%' % device['humidity']
+    if device['category'] == LIGHT_SENSOR:
+        return 'Level: %s' % device['light']
     return ''
 
