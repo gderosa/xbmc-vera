@@ -40,8 +40,11 @@ def icon(device):
             return 'devices/Motion_Sensor_100.png'
         else:
             return 'devices/Motion_Sensor_0.png'
-    elif    category == DOOR_LOCK: # TODO
-        return 'devices/Door_Lock.png'
+    elif    category == DOOR_LOCK: 
+        if int(device['status']):
+            return 'devices/Door_Lock_100.png'
+        else:
+            return 'devices/Door_Lock_0.png'
     else: # icon does not depend upon status
         try:
             return CATEGORY_ICONS[ category ] 
@@ -56,7 +59,7 @@ def stateBgImage(device):
     else:
         return STATE_BACKGROUNDS[ NONE ]  
 
-def essentialInfo(device, temperature_unit='F'):
+def essentialInfo(device, temperature_unit=''):
     if device['category'] == DIMMABLE_LIGHT:
         if 'watts' in device.keys():
             return '%sW' % device['watts']
@@ -71,6 +74,17 @@ def essentialInfo(device, temperature_unit='F'):
                 return 'Armed'
             if device['armed'] == '0':
                 return 'Bypass'
+    if device['category'] == THERMOSTAT:
+        mode, heat, cool = device['mode'], device['heatsp'], device['coolsp']
+        values = mode, heat, cool, temperature_unit
+        if      mode == 'Off':
+            return u'Mode: %s  [COLOR grey]Heat: %s  Cool: %s  (\xb0%s)[/COLOR]' % values
+        elif    'Heat' in mode:
+            return u'Mode: %s  Heat: %s  [COLOR grey]Cool: %s[/COLOR]  (\xb0%s)' % values
+        elif    'Cool' in mode:
+            return u'Mode: %s  [COLOR grey]Heat: %s[/COLOR]  Cool: %s  (\xb0%s)' % values
+        else:
+            return u'Mode: %s  Heat: %s  Cool: %s  (\xb0%s)'                     % values
     if device['category'] == WINDOW_COVERING:
         return 'Level: %s' % device['level'] 
     if device['category'] == HUMIDITY_SENSOR:
