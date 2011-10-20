@@ -3,7 +3,7 @@ from vera.device.state      import *
 
 CATEGORY_ICONS = {
         DIMMABLE_LIGHT:     'devices/Dimmable_Light.png',
-        SWITCH:             'devices/Binary_Light.png',
+        BINARY_LIGHT:       'devices/Binary_Light.png',         # or SWITCH
         MOTION_SENSOR:      'devices/Motion_Sensor.png',
         THERMOSTAT:         'devices/Thermostat.png',
         CAMERA:             'devices/Ip_Camera.png',
@@ -56,4 +56,22 @@ def stateBgImage(device):
     else:
         return STATE_BACKGROUNDS[ NONE ]  
 
+def essentialInfo(device, temperature_unit='F'):
+    if device['category'] == DIMMABLE_LIGHT:
+        try:
+            return '%sW' % device['watts']
+        except KeyError:
+            return '%s%%' % device['level']
+    if device['category'] in (BINARY_LIGHT, POWER_METER):
+        try:
+            return '%sW' % device['watts']
+        except KeyError:
+            pass
+    if device['category'] == LIGHT_SENSOR:
+        return 'Level: %s' % device['light']
+    if device['category'] == TEMPERATURE_SENSOR:
+        return u'%s\xb0%s' % (device['temperature'], temperature_unit) # degree sign
+    if device['category'] == HUMIDITY_SENSOR:
+        return '%s%%' % device['humidity']
+    return ''
 

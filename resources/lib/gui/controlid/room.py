@@ -19,5 +19,6 @@ def buttonToComment(buttonID):
 def buttonToStateBg(buttonID):
     return buttonID + 44000
 
-
+def buttonToInfo(buttonID):
+    return buttonID + 55000
 

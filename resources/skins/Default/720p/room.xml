@@ -64,10 +64,17 @@
           <ondown>11002</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44001">
+        <control type="label" id="44001"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66001"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33002">
@@ -90,10 +97,17 @@
           <ondown>11003</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44002">
+        <control type="label" id="44002"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66002"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33003">
@@ -116,10 +130,17 @@
           <ondown>11004</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44003">
+        <control type="label" id="44003"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66003"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33004">
@@ -142,10 +163,17 @@
           <ondown>11005</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44004">
+        <control type="label" id="44004"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66004"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33005">
@@ -168,10 +196,17 @@
           <ondown>11006</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44005">
+        <control type="label" id="44005"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66005"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33006">
@@ -194,10 +229,17 @@
           <ondown>11007</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44006">
+        <control type="label" id="44006"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66006"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33007">
@@ -220,10 +262,17 @@
           <ondown>11008</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44007">
+        <control type="label" id="44007"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66007"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33008">
@@ -246,10 +295,17 @@
           <ondown>11009</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44008">
+        <control type="label" id="44008"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66008"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33009">
@@ -272,10 +328,17 @@
           <ondown>11010</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44009">
+        <control type="label" id="44009"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66009"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33010">
@@ -298,10 +361,17 @@
           <ondown>11011</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44010">
+        <control type="label" id="44010"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66010"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33011">
@@ -324,10 +394,17 @@
           <ondown>11012</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44011">
+        <control type="label" id="44011"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66011"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33012">
@@ -350,10 +427,17 @@
           <ondown>11013</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44012">
+        <control type="label" id="44012"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66012"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33013">
@@ -376,10 +460,17 @@
           <ondown>11014</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44013">
+        <control type="label" id="44013"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66013"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33014">
@@ -402,10 +493,17 @@
           <ondown>11015</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44014">
+        <control type="label" id="44014"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66014"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33015">
@@ -428,10 +526,17 @@
           <ondown>11016</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44015">
+        <control type="label" id="44015"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66015"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33016">
@@ -454,10 +559,17 @@
           <ondown>11017</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44016">
+        <control type="label" id="44016"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66016"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33017">
@@ -480,10 +592,17 @@
           <ondown>11018</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44017">
+        <control type="label" id="44017"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66017"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33018">
@@ -506,10 +625,17 @@
           <ondown>11019</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44018">
+        <control type="label" id="44018"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66018"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
       <control type="group" id="33019">
@@ -532,10 +658,17 @@
           <ondown>11020</ondown>
           <onright>10104</onright>
         </control>
-        <control type="label" id="44019">
+        <control type="label" id="44019"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="66019"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
     </control>

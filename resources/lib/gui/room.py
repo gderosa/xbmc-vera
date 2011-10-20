@@ -46,14 +46,9 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
         self.setButtonIcon(     buttonID, device    ) 
         self.setButtonComment(  buttonID, device    )
         self.setStateColor(     buttonID, device    ) 
+        self.setInfo(           buttonID, device    )
 
         self.showButtonIconGroup(buttonID) 
-
-    def setStateColor(self, buttonID, device):
-        stateBgID = controlid.buttonToStateBg(buttonID) 
-        bgImage = self.getControl(stateBgID) 
-        bgImageFile = gui.device.stateBgImage(device)
-        bgImage.setImage(bgImageFile) 
 
     def setButtonIcon(self, buttonID, device):
         iconID = controlid.buttonToIcon(buttonID)
@@ -76,6 +71,21 @@ class RoomUI( xbmcgui.WindowXMLDialog ):
             )
             textWithTags = '[I][COLOR grey]%s[/COLOR][/I]' % text
             label.setLabel(textWithTags)
+
+    def setStateColor(self, buttonID, device):
+        stateBgID = controlid.buttonToStateBg(buttonID) 
+        bgImage = self.getControl(stateBgID) 
+        bgImageFile = gui.device.stateBgImage(device)
+        bgImage.setImage(bgImageFile) 
+
+    def setInfo(self, buttonID, device):
+        labelID = controlid.buttonToInfo(buttonID)
+        label = self.getControl(labelID)
+        string = gui.device.essentialInfo(
+                device, 
+                temperature_unit=self.vera.data['temperature']
+        )
+        label.setLabel(string)
 
     def showButtonIconGroup(self, buttonID):
         groupID = controlid.buttonToGroup(buttonID) 

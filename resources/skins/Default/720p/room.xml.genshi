@@ -70,10 +70,17 @@
           <ondown>${buttonID + 1}</ondown>
           <onright>10104</onright> 
         </control>
-        <control type="label" id="${buttonID + 33000}">
+        <control type="label" id="${buttonID + 33000}"><!-- comment -->
           <posx>4</posx>
           <posy>49</posy>
           <font>font10</font>
+        </control>
+        <control type="label" id="${buttonID + 55000}"><!-- info: watts, °C, etc. -->
+          <posx>380</posx>
+          <posy>43</posy>
+          <font>font10</font>
+          <width>300</width>
+          <align>right</align>
         </control>
       </control>
 
