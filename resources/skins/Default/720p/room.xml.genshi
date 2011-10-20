@@ -47,7 +47,6 @@
           <onup>11019</onup>
         </control>
       </control>
-
 <py:for each="buttonID in range(11001, 11019+1)" xml:space="preserve">
 
       <control type="group" id="${buttonID + 22000}">
@@ -85,6 +84,15 @@
       </control>
 
 </py:for>
+      <control type="group" id="33020"><!-- allow cycling -->
+        <visible>false</visible>
+        <control type="button" id="11020">
+          <ondown>11001</ondown>
+          <onup>11019</onup>
+        </control>
+      </control>
+
+
 
     </control>
     

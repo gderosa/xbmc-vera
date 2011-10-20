@@ -671,6 +671,13 @@
           <align>right</align>
         </control>
       </control>
+      <control type="group" id="33020"><!-- allow cycling -->
+        <visible>false</visible>
+        <control type="button" id="11020">
+          <ondown>11001</ondown>
+          <onup>11019</onup>
+        </control>
+      </control>
     </control>
     <control type="grouplist" id="10104">
       <posx>500</posx>
