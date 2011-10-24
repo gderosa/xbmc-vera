@@ -17,9 +17,9 @@
       <texture>bg0.png</texture>
     </control>
     <control type="label" id="101">
-      <posx>40</posx>
+      <posx>0</posx>
       <posy>70</posy>
-      <width>800</width>
+      <width>1280</width>
       <height>20</height>
       <font>font13_title</font>
       <label>Vera Home Automation</label>
@@ -29,8 +29,9 @@
       <shadowcolor>black</shadowcolor>
     </control>
     <control type="grouplist" id="104">
+      <itemgap>10</itemgap>
       <ondown>110</ondown>
-      <posx>200</posx>
+      <posx>330</posx>
       <posy>120</posy>
       <orientation>horizontal</orientation>
       <control type="button" id="2002">
@@ -53,9 +54,9 @@
       <control type="grouplist" id="103">
         <onup>2002</onup>
         <posy>200</posy>
-        <posx>60</posx>
+        <posx>230</posx>
         <width>400</width>
-        <height>450</height>
+        <height>480</height>
         <itemgap>10</itemgap>
         <pagecontrol>21</pagecontrol>
         <scrolltime>0</scrolltime>
@@ -122,10 +123,10 @@
         </control>
       </control>
       <control type="grouplist" id="105">
-        <posx>500</posx>
+        <posx>660</posx>
         <posy>200</posy>
         <width>400</width>
-        <height>450</height>
+        <height>480</height>
         <itemgap>10</itemgap>
         <orientation>vertical</orientation>
         <control type="group" id="33000">

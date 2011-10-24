@@ -19,9 +19,9 @@
     </control>
     
     <control type="label" id="101">
-      <posx>40</posx>
+      <posx>0</posx>
       <posy>70</posy>
-      <width>800</width>
+      <width>1280</width>
       <height>20</height>
       <font>font13_title</font>
       <label>Vera Home Automation</label>
@@ -32,8 +32,9 @@
     </control>
 
     <control type="grouplist" id="104">
+      <itemgap>10</itemgap>
       <ondown>110</ondown>
-      <posx>200</posx>
+      <posx>330</posx>
       <posy>120</posy>
       <orientation>horizontal</orientation>
       <control type="button" id="2002">    
@@ -54,12 +55,13 @@
     </control>
 
     <control type="group" id="110">
+
       <control type="grouplist" id="103">
         <onup>2002</onup>
         <posy>200</posy>
-        <posx>60</posx>
+        <posx>230</posx>
         <width>400</width>
-        <height>450</height>
+        <height>480</height>
         <itemgap>10</itemgap>
         <pagecontrol>21</pagecontrol>
         <scrolltime>0</scrolltime>
@@ -71,68 +73,20 @@
           <label>(no rooms)</label>
           <width>390</width> 
         </control>
-        
-        <control type="button" id="1002">
+<py:for each="buttonID in range(1002, 1019+1)" xml:space="preserve">
+
+        <control type="button" id="${buttonID}">
           <width>390</width>
         </control>
-        <control type="button" id="1003">
-          <width>390</width>
-        </control>      
-        <control type="button" id="1004">
-          <width>390</width>
-        </control>
-        <control type="button" id="1005">
-          <width>390</width>
-        </control>      
-        <control type="button" id="1006">
-          <width>390</width>
-        </control>
-        <control type="button" id="1007">
-          <width>390</width>
-        </control>      
-        <control type="button" id="1008">
-          <width>390</width>
-        </control>
-        <control type="button" id="1009">
-          <width>390</width>
-        </control>      
-        <control type="button" id="1010">
-          <width>390</width>
-        </control>
-        <control type="button" id="1011">
-          <width>390</width>
-        </control>                            
-        <control type="button" id="1012">
-          <width>390</width>
-        </control>
-        <control type="button" id="1013">
-          <width>390</width>
-        </control>      
-        <control type="button" id="1014">
-          <width>390</width>
-        </control>
-        <control type="button" id="1015">
-          <width>390</width>
-        </control>      
-        <control type="button" id="1016">
-          <width>390</width>
-        </control>
-        <control type="button" id="1017">
-          <width>390</width>
-        </control>      
-        <control type="button" id="1018">
-          <width>390</width>
-        </control>
-        <control type="button" id="1019">
-          <width>390</width>
-        </control>
+
+</py:for>
       </control>
       
       <control type="grouplist" id="105">
-        <posx>500</posx>
+        <posx>660</posx>
         <posy>200</posy>
         <width>400</width>
-        <height>450</height>
+        <height>480</height>
         <itemgap>10</itemgap>
         <orientation>vertical</orientation>
 
