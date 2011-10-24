@@ -31,6 +31,7 @@
     </control>
     
     <control type="grouplist" id="103">
+      <onup>104</onup>
       <posy>200</posy>
       <posx>60</posx>
       <width>400</width>
@@ -104,18 +105,22 @@
     </control>
     
     <control type="grouplist" id="104">
-      <posx>500</posx>
-      <posy>200</posy>
-      <onleft>103</onleft>
-      
-      <control type="button" id="2001">    
-        <label>Settings</label>      
-      </control>      
+      <ondown>1001</ondown>
+      <posx>200</posx>
+      <posy>120</posy>
+      <orientation>horizontal</orientation>
+
       <control type="button" id="2002">    
         <label>Get Data</label>      
-      </control>            
+        <width>200</width>
+      </control>                 
+      <control type="button" id="2001">    
+        <label>Settings</label>      
+        <width>200</width>
+      </control>      
       <control type="button" id="9999">    
         <label>Exit</label>      
+        <width>200</width>
       </control>      
       
     </control>
