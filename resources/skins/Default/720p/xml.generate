@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+
+import os
+import glob
+
+from genshi.template import MarkupTemplate
+
+for templateFileName in glob.glob('*.xml.genshi'):
+
+    xmlFileName = templateFileName.replace('.genshi', '')
+
+    print('Generating %s from %s ...' % (xmlFileName, templateFileName))
+
+    templateFile = open(templateFileName)
+    templateContent = templateFile.read()
+    template = MarkupTemplate(templateContent)
+    stream = template.generate()
+
+    xmlFile = open(xmlFileName, 'w')
+    xmlFile.write(stream.render('xml') + '\n')
+
+    xmlFile.close()
+    templateFile.close()
+
