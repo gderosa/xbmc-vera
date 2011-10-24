@@ -40,6 +40,7 @@
       <orientation>vertical</orientation>
       <onright>105</onright>
       <!-- <usecontrolcoords>true</usecontrolcoords>          -->
+      <defaultcontrol>1002</defaultcontrol>
       <control type="button" id="1001">
         <label>(no rooms)</label>
         <width>390</width>
@@ -124,7 +125,6 @@
       <height>450</height>
       <itemgap>10</itemgap>
       <orientation>vertical</orientation>
-      <onleft>103</onleft>
       <control type="group" id="33000">
         <visible>false</visible>
         <control type="button" id="11000">
@@ -150,7 +150,7 @@
           <label/>
           <onup>11000</onup>
           <ondown>11002</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44001"><!-- comment -->
           <posx>4</posx>
@@ -183,7 +183,7 @@
           <label/>
           <onup>11001</onup>
           <ondown>11003</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44002"><!-- comment -->
           <posx>4</posx>
@@ -216,7 +216,7 @@
           <label/>
           <onup>11002</onup>
           <ondown>11004</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44003"><!-- comment -->
           <posx>4</posx>
@@ -249,7 +249,7 @@
           <label/>
           <onup>11003</onup>
           <ondown>11005</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44004"><!-- comment -->
           <posx>4</posx>
@@ -282,7 +282,7 @@
           <label/>
           <onup>11004</onup>
           <ondown>11006</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44005"><!-- comment -->
           <posx>4</posx>
@@ -315,7 +315,7 @@
           <label/>
           <onup>11005</onup>
           <ondown>11007</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44006"><!-- comment -->
           <posx>4</posx>
@@ -348,7 +348,7 @@
           <label/>
           <onup>11006</onup>
           <ondown>11008</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44007"><!-- comment -->
           <posx>4</posx>
@@ -381,7 +381,7 @@
           <label/>
           <onup>11007</onup>
           <ondown>11009</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44008"><!-- comment -->
           <posx>4</posx>
@@ -414,7 +414,7 @@
           <label/>
           <onup>11008</onup>
           <ondown>11010</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44009"><!-- comment -->
           <posx>4</posx>
@@ -447,7 +447,7 @@
           <label/>
           <onup>11009</onup>
           <ondown>11011</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44010"><!-- comment -->
           <posx>4</posx>
@@ -480,7 +480,7 @@
           <label/>
           <onup>11010</onup>
           <ondown>11012</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44011"><!-- comment -->
           <posx>4</posx>
@@ -513,7 +513,7 @@
           <label/>
           <onup>11011</onup>
           <ondown>11013</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44012"><!-- comment -->
           <posx>4</posx>
@@ -546,7 +546,7 @@
           <label/>
           <onup>11012</onup>
           <ondown>11014</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44013"><!-- comment -->
           <posx>4</posx>
@@ -579,7 +579,7 @@
           <label/>
           <onup>11013</onup>
           <ondown>11015</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44014"><!-- comment -->
           <posx>4</posx>
@@ -612,7 +612,7 @@
           <label/>
           <onup>11014</onup>
           <ondown>11016</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44015"><!-- comment -->
           <posx>4</posx>
@@ -645,7 +645,7 @@
           <label/>
           <onup>11015</onup>
           <ondown>11017</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44016"><!-- comment -->
           <posx>4</posx>
@@ -678,7 +678,7 @@
           <label/>
           <onup>11016</onup>
           <ondown>11018</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44017"><!-- comment -->
           <posx>4</posx>
@@ -711,7 +711,7 @@
           <label/>
           <onup>11017</onup>
           <ondown>11019</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44018"><!-- comment -->
           <posx>4</posx>
@@ -744,7 +744,7 @@
           <label/>
           <onup>11018</onup>
           <ondown>11020</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="44019"><!-- comment -->
           <posx>4</posx>

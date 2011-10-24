@@ -135,7 +135,6 @@
       <height>450</height>
       <itemgap>10</itemgap>
       <orientation>vertical</orientation>
-      <onleft>103</onleft>
 
       <control type="group" id="33000">
         <visible>false</visible>
@@ -165,7 +164,7 @@
           <label></label>
           <onup>${buttonID - 1}</onup>
           <ondown>${buttonID + 1}</ondown>
-          <onright>10104</onright>
+          <onleft>103</onleft>
         </control>
         <control type="label" id="${buttonID + 33000}"><!-- comment -->
           <posx>4</posx>
