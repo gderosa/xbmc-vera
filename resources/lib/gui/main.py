@@ -110,7 +110,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
         for device in devices:
             if device['category'] in vera.device.category.DISPLAYABLE:
                 if \
-                        ( room and device['room'] == room['id'] ) or    \
+                        ( room and int(device['room']) == int(room['id']) ) or    \
                         ( not room and device['room'] == 0 )            :
                     self.showDeviceButton(buttonID, device)
                     self.buttonIDToDevice[buttonID] = device
