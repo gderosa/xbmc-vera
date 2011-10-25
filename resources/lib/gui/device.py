@@ -27,6 +27,12 @@ STATE_BACKGROUNDS = {
         SUCCESS:            'devices/state_green.png'
 }
 
+# no "write" action from gui other than "toggle" (on/off, arm/disarm etc.) 
+SIMPLY_SWITCHABLE = [ BINARY_LIGHT, MOTION_SENSOR, DOOR_LOCK  ]
+
+def simplySwitchable(device):
+    return (device['category'] in SIMPLY_SWITCHABLE) 
+
 def icon(device):
     category = device['category']
     if      category == DIMMABLE_LIGHT:

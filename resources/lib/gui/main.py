@@ -43,10 +43,10 @@ class GUI( xbmcgui.WindowXMLDialog ):
 
         elif    controlID in self.buttonIDToDevice.keys():
             device = self.buttonIDToDevice[controlID]
-            if vera.device.simplySwitchable(device):
-                vera.device.toggle(device)
+            if gui.device.simplySwitchable(device):
+                vera.device.toggle(device, vera_controller=self.vera) 
             else: # requires a new window
-                print('device "%s" is not simply switchable' % device['name']) 
+                pass
 
     def updateRooms(self):
         rooms = self.vera.data['rooms']
