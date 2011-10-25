@@ -1,6 +1,8 @@
 import httplib
 import json
 
+import time # DEBUG
+
 class Controller:
 
     PORT = 3480
@@ -8,6 +10,10 @@ class Controller:
     def __init__(self, host):
         self.host = host
         self.port = Controller.PORT
+
+    def update(self):
+        print('vera.Controller.update()')
+        time.sleep(5) 
 
     def getData(self):
         http = httplib.HTTPConnection(self.host, self.port)

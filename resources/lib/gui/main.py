@@ -1,4 +1,5 @@
 import re
+import threading
 
 import xbmc
 import xbmcgui
@@ -14,21 +15,37 @@ import gui.device
 __addon__   = xbmcaddon.Addon()
 __cwd__     = __addon__.getAddonInfo('path')
 
+class UpdateThread(threading.Thread):
+
+    def __init__(self, gui_):
+        self.gui    = gui_
+
+        threading.Thread.__init__(self)        
+
+    def run(self):
+        while(self.gui.runUpdateThread):
+            self.gui.vera.update()
+            self.gui.update()
+
 class GUI( xbmcgui.WindowXMLDialog ):
+
     def __init__(self, *args, **kwargs):
         self.buttonIDToRoom = {}
         self.buttonIDToDevice = {}
+        self.setVera()
+        self.updateThread = UpdateThread(self)
+        self.runUpdateThread = True
 
     def onInit(self):
         self.hideRooms()
         self.hideRoomDevices()
-        self.updateVera()
+        self.updateThread.start()
 
     def onClick(self, controlID):
         # Top buttons
         if      controlID == controlid.SETTINGS:
             __addon__.openSettings()
-            self.updateVera()
+            self.setVera()
         elif    controlID == controlid.GET_DATA:
             self.vera.getData()
             self.updateRooms()
@@ -49,6 +66,9 @@ class GUI( xbmcgui.WindowXMLDialog ):
                 vera.device.toggle(device, vera_controller=self.vera) 
             else: # requires a new window
                 pass
+
+    def update(self):
+        print('GUI.update()')
 
     def updateRooms(self):
         rooms = self.vera.data['rooms']
@@ -81,7 +101,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
             control = self.getControl(controlID)
             control.setVisible(False)
 
-    def updateVera(self):
+    def setVera(self):
         self.vera = vera.Controller(__addon__.getSetting('controller_address'))
 
     def fillRoom(self, room):
