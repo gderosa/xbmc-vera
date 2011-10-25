@@ -19,7 +19,7 @@ class Controller:
         http = httplib.HTTPConnection(self.host, self.port)
         http.request('GET', full_path)
         response = http.getresponse()
-        return respose.read()
+        return response.read()
 
 
     
