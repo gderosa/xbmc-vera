@@ -25,7 +25,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.updateVera()
 
     def onClick(self, controlID):
-
+        # Top buttons
         if      controlID == controlid.SETTINGS:
             __addon__.openSettings()
             self.updateVera()
@@ -35,12 +35,14 @@ class GUI( xbmcgui.WindowXMLDialog ):
         elif    controlID == controlid.EXIT:
             self.close()
 
+        # Rooms
         elif    controlID in self.buttonIDToRoom.keys():
             room_ = self.buttonIDToRoom[controlID]
             self.fillRoom(room_)
         elif    controlID == controlid.ROOM_NONE:
             self.fillRoom(None) 
 
+        # Devices
         elif    controlID in self.buttonIDToDevice.keys():
             device = self.buttonIDToDevice[controlID]
             if gui.device.simplySwitchable(device):
