@@ -68,7 +68,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
                 pass
 
     def update(self):
-        print('GUI.update()')
+        self.updateRooms()
 
     def updateRooms(self):
         rooms = self.vera.data['rooms']
@@ -138,11 +138,9 @@ class GUI( xbmcgui.WindowXMLDialog ):
         icon.setImage(image)
 
     def setDeviceButtonComment(self, buttonID, device):
+        labelID = controlid.room.buttonToComment(buttonID)
+        label = self.getControl(labelID)
         if 'comment' in device.keys():
-
-            labelID = controlid.room.buttonToComment(buttonID)
-            label = self.getControl(labelID)
-
             # turn '_Light: My message' into 'My message'
             # with or w/o leading underscore
             text = re.sub(                          \
@@ -152,6 +150,8 @@ class GUI( xbmcgui.WindowXMLDialog ):
             )
             textWithTags = '[I][COLOR grey]%s[/COLOR][/I]' % text
             label.setLabel(textWithTags)
+        else:
+            label.setLabel('')
 
     def setDeviceStateColor(self, buttonID, device):
         stateBgID = controlid.room.buttonToStateBg(buttonID)

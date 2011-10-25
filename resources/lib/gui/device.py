@@ -63,8 +63,12 @@ def icon(device):
 def stateBgImage(device):
     if 'state' in device.keys():
         for type_ in (NONE, PENDING, ERROR, SUCCESS):
-            if device['state'] in type_: 
+            # on updates you may get strings instead of integers :-(
+            if int(device['state']) in type_: 
                 return STATE_BACKGROUNDS[ type_ ]  
+        raise RuntimeError, \
+                'invalid device[\'state\'] ' + \
+                device['state'] + ' (' + str(type(device['state'])) + ')' 
     else:
         return STATE_BACKGROUNDS[ NONE ]  
 
