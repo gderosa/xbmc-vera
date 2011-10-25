@@ -1,3 +1,4 @@
+# See also:
 # http://wiki.mios.com/index.php/Luup_Device_Categories
 # http://wiki.micasaverde.com/index.php/UI_Simple#Status_of_the_device_or_scene_and_control_buttons
 
@@ -21,11 +22,15 @@ POWER_METER         = 21
 # aliases
 SECURITY_SENSOR = MOTION_SENSOR 
 SWITCH          = BINARY_LIGHT
+BINARY_SWITCH   = BINARY_LIGHT
+DIMMER          = DIMMABLE_LIGHT
 HVAC            = THERMOSTAT
 
 DISPLAYABLE = [
         DIMMABLE_LIGHT, BINARY_LIGHT, MOTION_SENSOR, THERMOSTAT, CAMERA, DOOR_LOCK,
         WINDOW_COVERING, HUMIDITY_SENSOR, TEMPERATURE_SENSOR, LIGHT_SENSOR,
         POWER_METER ]
+
+SIMPLY_SWITCHABLE = [ BINARY_LIGHT, MOTION_SENSOR, DOOR_LOCK ]
 
 

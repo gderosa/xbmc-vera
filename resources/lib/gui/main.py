@@ -5,6 +5,7 @@ import xbmcgui
 import xbmcaddon
 
 import vera
+import vera.device 
 import vera.device.category
 
 import gui.controlid as controlid
@@ -16,6 +17,7 @@ __cwd__     = __addon__.getAddonInfo('path')
 class GUI( xbmcgui.WindowXMLDialog ):
     def __init__(self, *args, **kwargs):
         self.buttonIDToRoom = {}
+        self.buttonIDToDevice = {}
 
     def onInit(self):
         self.hideRooms()
@@ -23,6 +25,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.updateVera()
 
     def onClick(self, controlID):
+
         if      controlID == controlid.SETTINGS:
             __addon__.openSettings()
             self.updateVera()
@@ -31,12 +34,19 @@ class GUI( xbmcgui.WindowXMLDialog ):
             self.updateRooms()
         elif    controlID == controlid.EXIT:
             self.close()
+
         elif    controlID in self.buttonIDToRoom.keys():
             room_ = self.buttonIDToRoom[controlID]
             self.fillRoom(room_)
         elif    controlID == controlid.ROOM_NONE:
             self.fillRoom(None) 
 
+        elif    controlID in self.buttonIDToDevice.keys():
+            device = self.buttonIDToDevice[controlID]
+            if vera.device.simplySwitchable(device):
+                vera.device.toggle(device)
+            else: # requires a new window
+                print('device "%s" is not simply switchable' % device['name']) 
 
     def updateRooms(self):
         rooms = self.vera.data['rooms']
@@ -81,6 +91,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
                         ( room and device['room'] == room['id'] ) or    \
                         ( not room and device['room'] == 0 )            :
                     self.showDeviceButton(buttonID, device)
+                    self.buttonIDToDevice[buttonID] = device
                     buttonID += 1
 
         groupID = controlid.room.buttonToGroup(buttonID) 

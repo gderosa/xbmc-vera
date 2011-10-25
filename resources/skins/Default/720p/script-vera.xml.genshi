@@ -32,26 +32,30 @@
     </control>
 
     <control type="grouplist" id="104">
+      <font>font12</font>
       <itemgap>16</itemgap>
       <ondown>110</ondown>
       <posx>0</posx>
       <posy>120</posy>
       <width>1280</width>
       <orientation>horizontal</orientation>
-      <align>center<align>
+      <align>center</align>
       <control type="button" id="2002">    
+        <align>center</align>
         <label>Get Data</label>      
-        <width>200</width>
+        <width>140</width>
         <ondown>103</ondown>
       </control>                 
       <control type="button" id="2001">    
+        <align>center</align>
         <label>Settings</label>      
-        <width>200</width>
+        <width>140</width>
         <ondown>110</ondown>
       </control>      
       <control type="button" id="9999">    
+        <align>center</align>
         <label>Exit</label>      
-        <width>200</width>
+        <width>140</width>
         <ondown>105</ondown>
       </control>      
     </control>
