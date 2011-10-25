@@ -10,9 +10,9 @@
   </coordinates>
   <controls>
     <control type="image">
-      <posx>16</posx>
+      <posx>50</posx>
       <posy>16</posy>
-      <width>1248</width>
+      <width>1180</width>
       <height>688</height>
       <texture>bg0.png</texture>
     </control>
@@ -29,7 +29,7 @@
       <shadowcolor>black</shadowcolor>
     </control>
     <control type="grouplist" id="104">
-      <itemgap>10</itemgap>
+      <itemgap>16</itemgap>
       <ondown>110</ondown>
       <posx>330</posx>
       <posy>120</posy>
