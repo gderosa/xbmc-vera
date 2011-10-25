@@ -69,6 +69,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
 
     def update(self):
         self.updateRooms()
+        self.fillRoom(self.currentRoom)
 
     def updateRooms(self):
         rooms = self.vera.data['rooms']
@@ -105,6 +106,8 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.vera = vera.Controller(__addon__.getSetting('controller_address'))
 
     def fillRoom(self, room):
+        self.currentRoom = room
+
         devices = self.vera.data['devices']
         buttonID = controlid.room.DEVICE_FIRST_BUTTON
         for device in devices:
