@@ -22,9 +22,9 @@ import gui
 ui = gui.GUI( "%s.xml" % __scriptId__.replace(".","-") , __cwd__, "Default")
 ui.doModal()
 
-# TODO: put this into gui.GUI -- __del__() doesn't work 
-print('ui.runUpdateThread = False')
-ui.runUpdateThread = False 
+## TODO: put this into gui.GUI -- __del__() doesn't work 
+#print('ui.runUpdateThread = False')
+#ui.runUpdateThread = False 
 
 del ui
 

@@ -2,7 +2,7 @@ import httplib
 import json
 
 HTTP_PORT           = 3480
-HTTP_TIMEOUT        = 60
+HTTP_TIMEOUT        = 6
 
 # Must be smaller than HTTP_TIMEOUT, see:
 # http://wiki.micasaverde.com/index.php/UI_Simple#lu_sdata:_The_polling_loop
@@ -38,14 +38,14 @@ class Controller:
     def mergeData(self, update_data):
         # loadtime shouldn't need to be updated
         for k in ('dataversion', 'state', 'comment'):
-            self.data[k] = update_data[k]
+            if k in update_data.keys():
+                self.data[k] = update_data[k]
         # TODO? a more efficient way? 
         if 'devices' in update_data.keys():
             for updated_device in update_data['devices']:
                 for i, device in enumerate(self.data['devices']):
                     if int(device['id']) == int(updated_device['id']): 
                         self.data['devices'][i].update(updated_device)
-                        print self.data['devices']
 
     def getData(self):
         http = httplib.HTTPConnection(self.host, self.port)

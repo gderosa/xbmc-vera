@@ -23,9 +23,10 @@ class UpdateThread(threading.Thread):
         threading.Thread.__init__(self)        
 
     def run(self):
-        while(self.gui.runUpdateThread):
+        while(True):
             self.gui.vera.update()
             self.gui.update()
+            print 'UpdateThread.run() cycle completed'
 
 class GUI( xbmcgui.WindowXMLDialog ):
 
@@ -34,9 +35,10 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.buttonIDToDevice = {}
         self.setVera()
         self.updateThread = UpdateThread(self)
-        self.runUpdateThread = True
+        self.updateThread.daemon = True
 
     def onInit(self):
+        self.currentRoom = None
         self.hideRooms()
         self.hideRoomDevices()
         self.updateThread.start()
@@ -113,8 +115,8 @@ class GUI( xbmcgui.WindowXMLDialog ):
         for device in devices:
             if device['category'] in vera.device.category.DISPLAYABLE:
                 if \
-                        ( room and int(device['room']) == int(room['id']) ) or    \
-                        ( not room and device['room'] == 0 )            :
+                        ( room and int(device['room']) == int(room['id']) ) or \
+                        ( not room and not int(device['room']) )            :
                     self.showDeviceButton(buttonID, device)
                     self.buttonIDToDevice[buttonID] = device
                     buttonID += 1
