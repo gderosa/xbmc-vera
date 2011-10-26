@@ -18,10 +18,8 @@ sys.path.append (BASE_RESOURCE_PATH)
 
 
 import gui
-
 ui = gui.GUI( "%s.xml" % __scriptId__.replace(".","-") , __cwd__, "Default")
 ui.doModal()
-sys.exit()
 del ui
 
 
