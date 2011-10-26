@@ -24,7 +24,7 @@ class UpdateThread(threading.Thread):
 
     def __init__(self, gui_):
         threading.Thread.__init__(self)
-        self.gui    = gui_
+        self.gui = gui_
 
     def run(self):
         while(self.gui.runUpdateThread):
@@ -52,7 +52,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.runUpdateThread = False
         
         # Yeah, this is necessary to 'kill' the awaiting http client
-        self.updateThread.gui.vera.updateConnection.sock.shutdown(socket.SHUT_RDWR)
+        self.vera.updateConnection.sock.shutdown(socket.SHUT_RDWR)
 
         self.updateThread.join()
         self.close()
