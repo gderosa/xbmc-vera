@@ -23,6 +23,9 @@ def toggle(device, vera_controller):
 '&Value=' + Value
         )
 
+    elif device['category'] == category.DOOR_LOCK:
+        pass # TODO
+
 
 
 
