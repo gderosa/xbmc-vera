@@ -8,6 +8,9 @@ HTTP_TIMEOUT        = 70
 # http://wiki.micasaverde.com/index.php/UI_Simple#lu_sdata:_The_polling_loop
 POLLING_TIMEOUT     = 60
 
+# Avoid flooding the network in case of lots of changes
+MINIMUM_DELAY_MSECS = 300
+
 class Controller:
 
     def __init__(self, host):
@@ -22,24 +25,25 @@ class Controller:
             # http://wiki.micasaverde.com/index.php/UI_Simple#lu_sdata:_The_polling_loop
             loadtime, dataversion = self.data['loadtime'], self.data['dataversion']
             query_string = \
-                    'id=sdata&loadtime=%d&dataversion=%d&timeout=%d' % \
-                    (loadtime, dataversion, POLLING_TIMEOUT)
-
+'id=sdata&loadtime=%d&dataversion=%d&timeout=%d&minimumdelay=%d' % \
+(loadtime, dataversion, POLLING_TIMEOUT, MINIMUM_DELAY_MSECS)
+            # must be "killable" by parent thread via .sock.shotdown(...)
             self.updateConnection = httplib.HTTPConnection( \
                         self.host, self.port, timeout=HTTP_TIMEOUT )  
             self.updateConnection.request('GET', '/data_request?%s' % query_string)
-            self.updateConnectionStream = self.updateConnection.getresponse()
-            update_data = json.load(self.updateConnectionStream)
-            self.updateConnectionStream.close()
-            self.updateConnection.close()
-            self.mergeData(update_data)
+            response = self.updateConnection.getresponse()
+            update_data = json.load(response)
+            if int(update_data['full']):
+                self.data = update_data
+            else:
+                self.mergeData(update_data)
         else:
             self.getData()
 
     # Only merges devices, currently (TODO) 
     def mergeData(self, update_data):
         # loadtime shouldn't need to be updated
-        for k in ('dataversion', 'state', 'comment'):
+        for k in ('loadtime', 'dataversion', 'state', 'comment'):
             if k in update_data.keys():
                 self.data[k] = update_data[k]
         # TODO? a more efficient way? 
