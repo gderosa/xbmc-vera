@@ -12,15 +12,17 @@ import vera.device.category
 import gui.controlid as controlid
 import gui.device
 
+# keymap.xml ?
+ACTION_PREVIOUS_MENU = 10
+
 __addon__   = xbmcaddon.Addon()
 __cwd__     = __addon__.getAddonInfo('path')
 
 class UpdateThread(threading.Thread):
 
     def __init__(self, gui_):
+        threading.Thread.__init__(self)
         self.gui    = gui_
-
-        threading.Thread.__init__(self)        
 
     def run(self):
         while(self.gui.runUpdateThread):
@@ -38,12 +40,20 @@ class GUI( xbmcgui.WindowXMLDialog ):
 
         self.runUpdateThread = True
         self.updateThread = UpdateThread(self)
-        self.updateThread.daemon = True
 
     def onInit(self):
         self.hideRooms()
         self.hideRoomDevices()
         self.updateThread.start()
+
+    def onAction(self, action):
+        if action == ACTION_PREVIOUS_MENU:
+            self.updateThreadCleanup()
+            self.close()
+
+    def updateThreadCleanup(self):
+        self.runUpdateThread = False
+        self.updateThread.join()
 
     def onClick(self, controlID):
         # Top buttons
@@ -54,6 +64,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
             self.vera.getData()
             self.updateRooms()
         elif    controlID == controlid.EXIT:
+            self.updateThreadCleanup()
             self.close()
 
         # Rooms
