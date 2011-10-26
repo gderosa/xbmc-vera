@@ -2,11 +2,11 @@ import httplib
 import json
 
 HTTP_PORT           = 3480
-HTTP_TIMEOUT        = 6
+HTTP_TIMEOUT        = 3
 
 # Must be smaller than HTTP_TIMEOUT, see:
 # http://wiki.micasaverde.com/index.php/UI_Simple#lu_sdata:_The_polling_loop
-POLLING_TIMEOUT     = HTTP_TIMEOUT - 3
+POLLING_TIMEOUT     = 1
 
 class Controller:
 
@@ -18,21 +18,22 @@ class Controller:
     # This method hangs for up to POLLING_TIMEOUT seconds if no changes,
     # so you won't need to time.sleep()
     def update(self):
-        if not self.data:
+        if self.data:
+            # http://wiki.micasaverde.com/index.php/UI_Simple#lu_sdata:_The_polling_loop
+            loadtime, dataversion = self.data['loadtime'], self.data['dataversion']
+            query_string = \
+                    'id=sdata&loadtime=%d&dataversion=%d&timeout=%d' % \
+                    (loadtime, dataversion, POLLING_TIMEOUT)
+
+            http = httplib.HTTPConnection( \
+                    self.host, self.port, timeout=HTTP_TIMEOUT )  
+            http.request('GET', '/data_request?%s' % query_string)
+            response = http.getresponse()
+            update_data = json.load(response)
+
+            self.mergeData(update_data)
+        else:
             self.getData()
-
-        # http://wiki.micasaverde.com/index.php/UI_Simple#lu_sdata:_The_polling_loop
-        loadtime, dataversion = self.data['loadtime'], self.data['dataversion']
-        query_string = \
-                'id=sdata&loadtime=%d&dataversion=%d&timeout=%d' % \
-                (loadtime, dataversion, POLLING_TIMEOUT)
-
-        http = httplib.HTTPConnection(self.host, self.port, timeout=HTTP_TIMEOUT) 
-        http.request('GET', '/data_request?%s' % query_string)
-        response = http.getresponse()
-        update_data = json.load(response)
-
-        self.mergeData(update_data) 
 
     # Only merges devices, currently (TODO) 
     def mergeData(self, update_data):

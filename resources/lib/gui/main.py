@@ -23,7 +23,7 @@ class UpdateThread(threading.Thread):
         threading.Thread.__init__(self)        
 
     def run(self):
-        while(True):
+        while(self.gui.runUpdateThread):
             self.gui.vera.update()
             self.gui.update()
             print 'UpdateThread.run() cycle completed'
@@ -34,11 +34,13 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.buttonIDToRoom = {}
         self.buttonIDToDevice = {}
         self.setVera()
+        self.currentRoom = None
+
+        self.runUpdateThread = True
         self.updateThread = UpdateThread(self)
         self.updateThread.daemon = True
 
     def onInit(self):
-        self.currentRoom = None
         self.hideRooms()
         self.hideRoomDevices()
         self.updateThread.start()
