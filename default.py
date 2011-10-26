@@ -21,13 +21,7 @@ import gui
 
 ui = gui.GUI( "%s.xml" % __scriptId__.replace(".","-") , __cwd__, "Default")
 ui.doModal()
-
-#ui.runUpdateThread = False 
-#try:
-#    ui.updateThread.join()
-#except:
-#    pass
-
+sys.exit()
 del ui
 
 

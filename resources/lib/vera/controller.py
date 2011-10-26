@@ -2,11 +2,11 @@ import httplib
 import json
 
 HTTP_PORT           = 3480
-HTTP_TIMEOUT        = 7
+HTTP_TIMEOUT        = 70
 
 # Must be smaller than HTTP_TIMEOUT, see:
 # http://wiki.micasaverde.com/index.php/UI_Simple#lu_sdata:_The_polling_loop
-POLLING_TIMEOUT     = 5
+POLLING_TIMEOUT     = 60
 
 class Controller:
 
@@ -25,13 +25,13 @@ class Controller:
                     'id=sdata&loadtime=%d&dataversion=%d&timeout=%d' % \
                     (loadtime, dataversion, POLLING_TIMEOUT)
 
-            updateConnection = httplib.HTTPConnection( \
+            self.updateConnection = httplib.HTTPConnection( \
                         self.host, self.port, timeout=HTTP_TIMEOUT )  
-            updateConnection.request('GET', '/data_request?%s' % query_string)
-            updateConnectionStream = updateConnection.getresponse()
-            update_data = json.load(updateConnectionStream)
-            updateConnectionStream.close()
-            updateConnection.close()
+            self.updateConnection.request('GET', '/data_request?%s' % query_string)
+            self.updateConnectionStream = self.updateConnection.getresponse()
+            update_data = json.load(self.updateConnectionStream)
+            self.updateConnectionStream.close()
+            self.updateConnection.close()
             self.mergeData(update_data)
         else:
             self.getData()

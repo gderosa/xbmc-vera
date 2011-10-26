@@ -1,5 +1,7 @@
+import sys
 import re
 import threading
+import socket
 
 import xbmc
 import xbmcgui
@@ -46,14 +48,18 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.hideRoomDevices()
         self.updateThread.start()
 
+    def exit(self):
+        self.runUpdateThread = False
+        
+        # Yeah, this is necessary to 'kill' the awaiting http client
+        self.updateThread.gui.vera.updateConnection.sock.shutdown(socket.SHUT_RDWR)
+
+        self.updateThread.join()
+        self.close()
+
     def onAction(self, action):
         if action == ACTION_PREVIOUS_MENU:
-            self.updateThreadCleanup()
-            self.close()
-
-    def updateThreadCleanup(self):
-        self.runUpdateThread = False
-        self.updateThread.join()
+            self.exit()
 
     def onClick(self, controlID):
         # Top buttons
@@ -64,8 +70,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
             self.vera.getData()
             self.updateRooms()
         elif    controlID == controlid.EXIT:
-            self.updateThreadCleanup()
-            self.close()
+            self.exit()
 
         # Rooms
         elif    controlID in self.buttonIDToRoom.keys():
