@@ -26,7 +26,6 @@ ui.runUpdateThread = False
 
 del ui
 
-sys.exit(0)
 
 
 
