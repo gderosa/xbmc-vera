@@ -36,7 +36,10 @@ def simplySwitchable(device):
 def icon(device):
     category = device['category']
     if      category == DIMMABLE_LIGHT:
-        level = float(device['level'])
+        try:
+            level = float(device['level'])
+        except KeyError:
+            level = 0.0
         level_round = round(level/25)*25 # 0.0, 25.0, 50.0, 75.0 or 100.0 
         return 'devices/Dimmable_Light_%d.png' % level_round
     elif    category == SWITCH:
@@ -76,8 +79,10 @@ def essentialInfo(device, temperature_unit=''):
     if device['category'] == DIMMABLE_LIGHT:
         if 'watts' in device.keys():
             return '%sW' % device['watts']
-        else:
+        elif 'level' in device.keys():
             return '%s%%' % device['level']
+        else:
+            return '0%'
     if device['category'] in (BINARY_LIGHT, POWER_METER):
         if 'watts' in device.keys():
             return '%sW' % device['watts']
