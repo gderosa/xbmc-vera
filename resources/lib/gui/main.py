@@ -17,7 +17,7 @@ import gui.device
 # keymap.xml ?
 ACTION_PREVIOUS_MENU = 10
 
-__addon__   = xbmcaddon.Addon()
+__addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')
 
 class UpdateThread(threading.Thread):

@@ -8,7 +8,7 @@ from vera.device.state      import *
 
 import gui.popup
 
-__addon__   = xbmcaddon.Addon()
+__addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')
 
 CATEGORY_ICONS = {
@@ -127,9 +127,11 @@ def essentialInfo(device, temperature_unit=''):
     return ''
 
 def popup(device):
-    popup = gui.popup.DimmableLight('dimmable-light.xml', __cwd__, 'Default')
-    popup.doModal()
-    del popup
+    if device['category'] == DIMMABLE_LIGHT:
+        popup = gui.popup.DimmableLight( \
+                'dimmable-light.xml', __cwd__, 'Default' ) 
+        popup.doModal()
+        del popup
 
 
 
