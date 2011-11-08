@@ -85,7 +85,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
             if gui.device.simplySwitchable(device):
                 vera.device.toggle(device, vera_controller=self.vera) 
             else: # requires a new window
-                pass
+                gui.device.popup(device)
 
     def update(self):
         self.updateRooms()

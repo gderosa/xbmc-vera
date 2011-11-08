@@ -1,8 +1,15 @@
 # http://wiki.micasaverde.com/index.php/Luup_Variables
 # http://wiki.micasaverde.com/index.php/UI_Simple#Status_of_the_device_or_scene_and_control_buttons
 
+import xbmcaddon
+
 from vera.device.category   import *
 from vera.device.state      import *
+
+import gui.popup
+
+__addon__   = xbmcaddon.Addon()
+__cwd__     = __addon__.getAddonInfo('path')
 
 CATEGORY_ICONS = {
         DIMMABLE_LIGHT:     'devices/Dimmable_Light.png',
@@ -118,4 +125,11 @@ def essentialInfo(device, temperature_unit=''):
     if device['category'] == LIGHT_SENSOR:
         return 'Level: %s' % device['light']
     return ''
+
+def popup(device):
+    popup = gui.popup.DimmableLight('dimmable-light.xml', __cwd__, 'Default')
+    popup.doModal()
+    del popup
+
+
 
