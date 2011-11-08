@@ -126,12 +126,15 @@ def essentialInfo(device, temperature_unit=''):
         return 'Level: %s' % device['light']
     return ''
 
-def popup(device):
-    if device['category'] == DIMMABLE_LIGHT:
-        popup = gui.popup.DimmableLight( \
-                'dimmable-light.xml', __cwd__, 'Default' ) 
+def popup(device_):
+    if device_['category'] == DIMMABLE_LIGHT:
+        popup = gui.popup.DimmableLight(                    \
+                'dimmable-light.xml', __cwd__, 'Default',   \
+                device = device_                            )  
         popup.doModal()
         del popup
+
+
 
 
 
