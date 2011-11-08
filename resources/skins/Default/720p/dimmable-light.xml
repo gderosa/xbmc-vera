@@ -4,10 +4,10 @@
   <allowoverlay>no</allowoverlay>
   <coordinates>
     <posx>387</posx>
-    <posy>200</posy>
+    <posy>230</posy>
   </coordinates>
   <width>506</width>
-  <height>320</height>
+  <height>260</height>
   
   <controls>
 
@@ -15,15 +15,16 @@
       <posx>0</posx>
       <posy>0</posy>
       <width>506</width>
-      <height>320</height>
+      <height>260</height>
       <texture>bg0.png</texture>
     </control>
 
     <control type="slider" id="102002">
-      <posx>100</posx>
-      <width>100</width>
-      <description>Slider</description>
-
+      <posx>153</posx>
+      <posy>120</posy>
+      <width>200</width>
+      <height>20</height>
+      <texturesliderbar>controls/slider_bg.png</texturesliderbar>
       <textureslidernib>controls/slider_knob.png</textureslidernib>
       <textureslidernibfocus>controls/slider_knob.png</textureslidernibfocus>
     </control>
