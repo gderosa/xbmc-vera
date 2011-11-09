@@ -1,5 +1,6 @@
 import sys
 import re
+import time
 import threading
 import socket
 
@@ -28,9 +29,19 @@ class UpdateThread(threading.Thread):
 
     def run(self):
         while(self.gui.runUpdateThread):
-            self.gui.vera.update()
-            self.gui.update()
-            print 'UpdateThread.run() cycle completed'
+            try:
+                self.gui.vera.update()
+                self.gui.update()
+                print('UpdateThread.run() cycle completed')
+            except:
+                if self.gui.runUpdateThread:
+                    print('exception: sleep for 1 sec')
+                    time.sleep(1)
+                else:
+                    # Socket has been killed by GUI.exit() and most likely
+                    # a BadStatusLine has been raised: no need to sleep
+                    # in this case
+                    pass 
 
 class GUI( xbmcgui.WindowXMLDialog ):
 
