@@ -127,12 +127,21 @@ def essentialInfo(device, temperature_unit=''):
     return ''
 
 def popup(parent_, device_):
+    popup = None
+
     if device_['category'] == DIMMABLE_LIGHT:
         popup = gui.popup.DimmableLight(                    \
                 'dimmable-light.xml', __cwd__, 'Default',   \
                 parent=parent_, device = device_            )  
         popup.doModal()
-        del popup
+
+    elif device_['category'] == HVAC:
+        popup = gui.popup.HVAC(                             \
+                'hvac.xml', __cwd__, 'Default',             \
+                parent=parent_, device = device_            )
+        popup.doModal()
+    
+    del popup # isn't this automatically garbaged?
 
 
 

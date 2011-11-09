@@ -18,7 +18,7 @@ ACTION_PREVIOUS_MENU    = 10
 __addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')
 
-class DimLightThread(threading.Thread):
+class DimLightThread( threading.Thread ):
 
     def __init__(self, gui_):
         threading.Thread.__init__(self)
@@ -58,5 +58,28 @@ class DimmableLight( xbmcgui.WindowXMLDialog ):
         elif action == ACTION_MOVE_DOWN:
             self.slider().setPercent(0)
 
+class HVAC( xbmcgui.WindowXMLDialog ):
+
+    def __init__(self, *args, **kwargs):
+        self.device = kwargs['device']
+        self.parent = kwargs['parent']
+        #self.dimmerThread = DimLightThread(self)
+
+    def onInit(self):
+        pass
+        #self.slider().setPercent( int( float( self.device['level'] ) ) )
+        #self.dimmerThread.start()
+
+    #def slider(self):
+    #    return self.getControl(controlid.dimmable_light.SLIDER)
+
+    def onAction(self, action):
+        if action in (ACTION_PREVIOUS_MENU, ACTION_ENTER):
+            # self.dimmerThread.runThread = False
+            self.close()
+        #elif action == ACTION_MOVE_UP:
+        #    self.slider().setPercent(100)
+        #elif action == ACTION_MOVE_DOWN:
+        #    self.slider().setPercent(0)
 
 

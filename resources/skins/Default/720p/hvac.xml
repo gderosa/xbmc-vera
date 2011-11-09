@@ -1,0 +1,45 @@
+<?xml version="1.0" ?> 
+<window type="dialog">
+  <defaultcontrol always="false">105003</defaultcontrol> 
+  <allowoverlay>no</allowoverlay>
+  <coordinates>
+    <posx>387</posx>
+    <posy>230</posy>
+  </coordinates>
+  <width>506</width>
+  <height>260</height>
+  
+  <controls>
+
+    <control type="image">
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>506</width>
+      <height>260</height>
+      <texture>bg0.png</texture>
+    </control>
+
+    <control type="slider" id="105003">
+      <posx>153</posx>
+      <posy>100</posy>
+      <width>200</width>
+      <height>20</height>
+      <ondown>105004</ondown>
+      <texturesliderbar>controls/slider_bg.png</texturesliderbar>
+      <textureslidernib>controls/slider_knob.png</textureslidernib>
+      <textureslidernibfocus>controls/slider_knob_focus.png</textureslidernibfocus>
+    </control>
+    <control type="slider" id="105004">
+      <posx>153</posx>
+      <posy>140</posy>
+      <width>200</width>
+      <height>20</height>
+      <onup>105003</onup>
+      <texturesliderbar>controls/slider_bg.png</texturesliderbar>
+      <textureslidernib>controls/slider_knob.png</textureslidernib>
+      <textureslidernibfocus>controls/slider_knob_focus.png</textureslidernibfocus>
+    </control>
+
+
+  </controls>
+</window>
