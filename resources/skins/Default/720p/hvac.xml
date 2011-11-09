@@ -1,4 +1,4 @@
-<?xml version="1.0" ?> 
+<?xml version="1.0" encoding="UTF-8"?> 
 <window type="dialog">
   <defaultcontrol always="false">105003</defaultcontrol> 
   <allowoverlay>no</allowoverlay>
@@ -19,6 +19,11 @@
       <texture>bg0.png</texture>
     </control>
 
+    <control type="label">
+      <posx>80</posx>
+      <posy>92</posy>
+      <label>Heat</label>
+    </control>
     <control type="slider" id="105003">
       <posx>153</posx>
       <posy>100</posy>
@@ -28,6 +33,16 @@
       <texturesliderbar>controls/slider_bg.png</texturesliderbar>
       <textureslidernib>controls/slider_knob.png</textureslidernib>
       <textureslidernibfocus>controls/slider_knob_focus.png</textureslidernibfocus>
+    </control>
+    <control type="label">
+      <posx>380</posx>
+      <posy>92</posy>
+      <label>20°C</label>
+    </control>
+    <control type="label">
+      <posx>80</posx>
+      <posy>132</posy>
+      <label>Cool</label>
     </control>
     <control type="slider" id="105004">
       <posx>153</posx>
@@ -39,7 +54,11 @@
       <textureslidernib>controls/slider_knob.png</textureslidernib>
       <textureslidernibfocus>controls/slider_knob_focus.png</textureslidernibfocus>
     </control>
-
+    <control type="label">
+      <posx>380</posx>
+      <posy>132</posy>
+      <label>10°C</label>
+    </control>
 
   </controls>
 </window>
