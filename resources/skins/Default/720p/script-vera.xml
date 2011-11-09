@@ -14,7 +14,7 @@
       <posy>16</posy>
       <width>1180</width>
       <height>688</height>
-      <texture>bg0.png</texture>
+      <texture>bg.png</texture>
     </control>
     <control type="label" id="101">
       <posx>0</posx>
