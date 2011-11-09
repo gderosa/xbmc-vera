@@ -6,13 +6,22 @@ License: GPL v2 or, at your option, any later version.
 
 Sponsored by VEMAR S.A.S.[5], Paterno (PZ), Italy.
 
-Pictures copyright:
+Pictures Copyright:
 
-* icon.png is based on http://www.flickr.com/photos/applejuices/3510973300/ 
+* The vast majority of icons and pictures come from Vera web UI, 
+  Copyright Mi Casa Verde / MiOS , 
+  and are located in resources/skins/Default/media/mios
+
+* icon.png is based on http://micasaverde.com/images/vera_melu.png and
+  http://micasaverde.com/images/logo.png, 
+  Copyright Mi Casa Verde
+
+* icon.old.png was based on 
+  http://www.flickr.com/photos/applejuices/3510973300/ 
+  (see the URL for Copyright info)
+
 * fanart.jpg is based on http://www.geograph.org.uk/photo/44556 
-
-See the URLs for copyright info. We havent't got or asked permission to use 
-Mi Casa Verde logos (yet!). 
+  (see the URL for Copyright info)
 
 -- 
 [1] http://xbmc.org
