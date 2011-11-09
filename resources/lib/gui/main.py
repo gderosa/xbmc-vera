@@ -63,7 +63,8 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.runUpdateThread = False
         
         # Yeah, this is necessary to 'kill' the awaiting http client
-        self.vera.updateConnection.sock.shutdown(socket.SHUT_RDWR)
+        if self.vera.updateConnection.sock:
+            self.vera.updateConnection.sock.shutdown(socket.SHUT_RDWR)
 
         self.updateThread.join()
         self.close()
@@ -96,7 +97,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
             if gui.device.simplySwitchable(device):
                 vera.device.toggle(device, vera_controller=self.vera) 
             else: # requires a new window
-                gui.device.popup(device)
+                gui.device.popup(self, device)
 
     def update(self):
         self.updateRooms()
