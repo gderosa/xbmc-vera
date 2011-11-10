@@ -47,4 +47,11 @@ def hvac_set_mode(device, vera_controller, mode):
 '&serviceId=urn:upnp-org:serviceId:HVAC_UserOperatingMode1'                 + \
 '&action=SetModeTarget&NewModeTarget=' + mode
         )
+def hvac_set_fan(device, vera_controller, mode):
+    if device['category'] == category.HVAC:
+        vera_controller.GET( \
+'/data_request?id=action&DeviceNum=' + str(device['id'])                    + \
+'&serviceId=urn:upnp-org:serviceId:HVAC_FanOperatingMode1'                  + \
+'&action=SetMode&NewMode=' + mode
+        )
 

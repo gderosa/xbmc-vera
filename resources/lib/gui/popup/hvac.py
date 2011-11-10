@@ -119,4 +119,5 @@ class HVAC( xbmcgui.WindowXMLDialog ):
 
     def commit(self):
         vera.device.hvac_set_mode(self.device, self.vera, self.mode.current)
+        vera.device.hvac_set_fan(self.device, self.vera, self.fanMode.current)
 
