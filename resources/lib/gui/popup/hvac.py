@@ -9,6 +9,11 @@ from    gui                         import controlid
 __addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')
 
+T_MIN = 273.15 # 0 C
+T_MAX = 313.15 # 40 C
+
+T_STEP = ( T_MAX - T_MIN ) / 100.0
+
 class HVAC( xbmcgui.WindowXMLDialog ):
 
     def __init__(self, *args, **kwargs):
@@ -41,20 +46,17 @@ class HVAC( xbmcgui.WindowXMLDialog ):
         else:
             if focusedControl == self.slider_heat():
                 if action == ACTION_MOVE_LEFT:
-                    self.heat.k -= 0.4
+                    self.heat.k -= T_STEP
                 elif action == ACTION_MOVE_RIGHT:
-                    self.heat.k += 0.4
+                    self.heat.k += T_STEP
             elif focusedControl == self.slider_cool():
                 if action == ACTION_MOVE_LEFT:
-                    self.cool.k -= 0.4
+                    self.cool.k -= T_STEP
                 elif action == ACTION_MOVE_RIGHT:
-                    self.cool.k += 0.4
+                    self.cool.k += T_STEP
             self.update()
 
     def update(self):
-        T_MIN = 273.15 # 0 C
-        T_MAX = 313.15 # 40 C
-
         if      self.heat.k < T_MIN:
             self.slider_heat().setPercent(0)
         elif    self.heat.k > T_MAX:
