@@ -2,6 +2,7 @@ import  xbmcaddon
 import  xbmcgui
 
 from    util.temperature            import Temperature
+from    util.cycle                  import Cycle
 import  vera.device
 from    gui.xbmc                    import *
 from    gui                         import controlid
@@ -17,14 +18,17 @@ T_STEP = ( T_MAX - T_MIN ) / 100.0
 class HVAC( xbmcgui.WindowXMLDialog ):
 
     def __init__(self, *args, **kwargs):
+        self.previouslyFocused = None
+
         self.device = kwargs['device']
         self.parent = kwargs['parent']
         self.vera   = self.parent.vera
-        self.heat = Temperature()
-        self.cool = Temperature()
-        self.heat.c = 20
-        self.cool.c = 18
+
+        self.heat = Temperature(c=20)
+        self.cool = Temperature(c=18)
         self.temperatureUnit = 'C'
+
+        self.fanMode = Cycle(vera.device.HVAC_FAN_MODES)
 
     def onInit(self):
         self.update()
@@ -39,8 +43,12 @@ class HVAC( xbmcgui.WindowXMLDialog ):
     def label_cool(self):
         return self.getControl(controlid.hvac.LABEL_COOL)
 
+    def button_fan(self):
+        return self.getControl(controlid.hvac.FAN)
+
     def onAction(self, action):
         focusedControl = self.getFocus()
+
         if action in (ACTION_PREVIOUS_MENU, ACTION_ENTER):
             self.close()
         else:
@@ -54,7 +62,14 @@ class HVAC( xbmcgui.WindowXMLDialog ):
                     self.cool.k -= T_STEP
                 elif action == ACTION_MOVE_RIGHT:
                     self.cool.k += T_STEP
+            elif focusedControl == self.previouslyFocused == self.button_fan():
+                if action in (ACTION_MOVE_DOWN, ACTION_MOVE_RIGHT):
+                    self.fanMode.cycle()
+                elif action == ACTION_MOVE_LEFT:
+                    self.fanMode.cycle_back() 
             self.update()
+
+        self.previouslyFocused = focusedControl
 
     def update(self):
         if      self.heat.k < T_MIN:
@@ -77,5 +92,7 @@ class HVAC( xbmcgui.WindowXMLDialog ):
                     ( (self.cool.k - T_MIN) / (T_MAX - T_MIN) ) * 100 \
             ) )
             self.slider_cool().setPercent(percent)
-        self.label_cool().setLabel(u'%.1f \xb0C' % self.cool.c) 
+        self.label_cool().setLabel(u'%.1f \xb0C' % self.cool.c)
+
+        self.button_fan().setLabel( self.fanMode.current() ) 
 
