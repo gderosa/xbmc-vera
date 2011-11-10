@@ -65,9 +65,11 @@
       <textureslidernib>controls/slider_knob.png</textureslidernib>
       <textureslidernibfocus>controls/slider_knob_focus.png</textureslidernibfocus>
     </control>
-    <control type="label">
-      <posx>380</posx>
+    <control type="label" id="105103">
+      <posx>460</posx>
       <posy>92</posy>
+      <align>right</align>
+      <width>100</width>
       <label>20°C</label>
     </control>
     
@@ -94,9 +96,11 @@
       <textureslidernib>controls/slider_knob.png</textureslidernib>
       <textureslidernibfocus>controls/slider_knob_focus.png</textureslidernibfocus>
     </control>
-    <control type="label">
-      <posx>380</posx>
+    <control type="label" id="105104">
+      <posx>460</posx>
       <posy>132</posy>
+      <width>100</width>
+      <align>right</align>
       <label>10°C</label>
     </control>
 
