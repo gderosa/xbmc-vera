@@ -1,24 +1,15 @@
-import time
-import threading
+import  time
+import  threading
 
-import xbmcaddon
-import xbmcgui
+import  xbmcaddon
+import  xbmcgui
 
-from temperature import Temperature
-
-import vera.device
-
-import gui.controlid as controlid
-import controlid.dimmable_light
-import controlid.hvac
-
-# See xbmc/guilib/Key.h in XMBC sources
-ACTION_MOVE_LEFT        =  1
-ACTION_MOVE_RIGHT       =  2
-ACTION_MOVE_UP          =  3
-ACTION_MOVE_DOWN        =  4
-ACTION_ENTER            =  7
-ACTION_PREVIOUS_MENU    = 10 
+from    util.temperature            import Temperature
+import  vera.device
+from    gui.xbmc                    import *
+import  gui.controlid               as controlid
+import  controlid.dimmable_light
+import  controlid.hvac
 
 __addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')
