@@ -38,8 +38,13 @@
       <height>30</height>
       <align>center</align>
       <aligny>center</aligny>
-      <label>Off</label>
+      <label>OFF</label>
+      <texturefocus>-</texturefocus>
+      <texturenofocus>-</texturenofocus>
       <ondown>105003</ondown>
+      <texturefocus>-</texturefocus>
+      <texturenofocus>-</texturenofocus>
+      <focusedcolor>FF66BBFF</focusedcolor>      
     </control>
         
     <control type="label">
@@ -123,8 +128,11 @@
       <height>30</height>
       <align>center</align>
       <aligny>center</aligny>
-      <label>Auto</label>
+      <label>AUTO</label>
       <onup>105004</onup>
+      <texturefocus>-</texturefocus>
+      <texturenofocus>-</texturenofocus>
+      <focusedcolor>FF66BBFF</focusedcolor>
     </control>    
 
   </controls>
