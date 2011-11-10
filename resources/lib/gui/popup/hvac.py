@@ -28,8 +28,14 @@ class HVAC( xbmcgui.WindowXMLDialog ):
         self.heat = Temperature( self.device['heatsp'], self.temperatureUnit ) 
         self.cool = Temperature( self.device['coolsp'], self.temperatureUnit )
 
-        self.mode       = Cycle(vera.device.HVAC_MODES)
-        self.fanMode    = Cycle(vera.device.HVAC_FAN_MODES)
+        self.mode               = Cycle(vera.device.HVAC_MODES)
+        self.mode.current       = self.device['mode']
+
+        self.fanMode            = Cycle(vera.device.HVAC_FAN_MODES)
+        try:
+            self.fanMode.current    = self.device['fan']
+        except KeyError:
+            self.fanMode.current    = 'Auto'
 
     def onInit(self):
         self.update()
@@ -102,9 +108,9 @@ class HVAC( xbmcgui.WindowXMLDialog ):
             self.slider_cool().setPercent(percent)
         self.label_cool().setLabel(u'%.1f \xb0C' % self.cool.c)
 
-        _msg = message.hvac.button_fan( self.fanMode.current() )
+        _msg = message.hvac.button_fan( self.fanMode.current )
         self.button_fan().setLabel( _msg.upper() )   
         
-        _msg = message.hvac.button_mode( self.mode.current() )
+        _msg = message.hvac.button_mode( self.mode.current )
         self.button_mode().setLabel( _msg.upper() )  
 
