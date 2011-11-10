@@ -31,13 +31,15 @@
       <posy>52</posy>
       <label>Mode</label>
     </control>
-    <control type="label">
-      <posx>153</posx>
+    <control type="button" id="105002">
+      <posx>173</posx>
       <posy>52</posy>
-      <width>200</width>
-      <height>20</height>
+      <width>160</width>
+      <height>30</height>
       <align>center</align>
-      <label>OFF</label>
+      <aligny>center</aligny>
+      <label>Off</label>
+      <ondown>105003</ondown>
     </control>
         
     <control type="label">
@@ -57,6 +59,7 @@
       <posy>100</posy>
       <width>200</width>
       <height>20</height>
+      <onup>105002</onup>
       <ondown>105004</ondown>
       <texturesliderbar>controls/slider_bg.png</texturesliderbar>
       <textureslidernib>controls/slider_knob.png</textureslidernib>
@@ -86,6 +89,7 @@
       <width>200</width>
       <height>20</height>
       <onup>105003</onup>
+      <ondown>105005</ondown>
       <texturesliderbar>controls/slider_bg.png</texturesliderbar>
       <textureslidernib>controls/slider_knob.png</textureslidernib>
       <textureslidernibfocus>controls/slider_knob_focus.png</textureslidernibfocus>
@@ -108,13 +112,15 @@
       <posy>172</posy>
       <label>Fan</label>
     </control>
-    <control type="label">
-      <posx>153</posx>
+    <control type="button" id="105005">
+      <posx>173</posx>
       <posy>172</posy>
-      <width>200</width>
-      <height>20</height>
+      <width>160</width>
+      <height>30</height>
       <align>center</align>
-      <label>AUTO</label>
+      <aligny>center</aligny>
+      <label>Auto</label>
+      <onup>105004</onup>
     </control>    
 
   </controls>
