@@ -31,7 +31,15 @@
       <posy>52</posy>
       <label>Mode</label>
     </control>
-    
+    <control type="label">
+      <posx>153</posx>
+      <posy>52</posy>
+      <width>200</width>
+      <height>20</height>
+      <align>center</align>
+      <label>OFF</label>
+    </control>
+        
     <control type="label">
       <posx>32</posx>
       <posy>92</posy>
@@ -100,6 +108,14 @@
       <posy>172</posy>
       <label>Fan</label>
     </control>
+    <control type="label">
+      <posx>153</posx>
+      <posy>172</posy>
+      <width>200</width>
+      <height>20</height>
+      <align>center</align>
+      <label>AUTO</label>
+    </control>    
 
   </controls>
 </window>
