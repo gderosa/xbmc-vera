@@ -28,7 +28,9 @@ class HVAC( xbmcgui.WindowXMLDialog ):
         self.cool = Temperature(c=18)
         self.temperatureUnit = 'C'
 
-        self.fanMode = Cycle(vera.device.HVAC_FAN_MODES)
+        self.mode       = Cycle(vera.device.HVAC_MODES)
+        self.fanMode    = Cycle(vera.device.HVAC_FAN_MODES)
+
 
     def onInit(self):
         self.update()
@@ -45,6 +47,8 @@ class HVAC( xbmcgui.WindowXMLDialog ):
 
     def button_fan(self):
         return self.getControl(controlid.hvac.FAN)
+    def button_mode(self):
+        return self.getControl(controlid.hvac.MODE)
 
     def onAction(self, action):
         focusedControl = self.getFocus()
@@ -66,7 +70,12 @@ class HVAC( xbmcgui.WindowXMLDialog ):
                 if action in (ACTION_MOVE_DOWN, ACTION_MOVE_RIGHT):
                     self.fanMode.cycle()
                 elif action == ACTION_MOVE_LEFT:
-                    self.fanMode.cycle_back() 
+                    self.fanMode.cycle_back()
+            elif focusedControl == self.previouslyFocused == self.button_mode():
+                if action in (ACTION_MOVE_UP, ACTION_MOVE_RIGHT):
+                    self.mode.cycle()
+                elif action == ACTION_MOVE_LEFT:
+                    self.mode.cycle_back()                   
             self.update()
 
         self.previouslyFocused = focusedControl
@@ -94,5 +103,6 @@ class HVAC( xbmcgui.WindowXMLDialog ):
             self.slider_cool().setPercent(percent)
         self.label_cool().setLabel(u'%.1f \xb0C' % self.cool.c)
 
-        self.button_fan().setLabel( self.fanMode.current() ) 
+        self.button_fan(    ).setLabel( self.fanMode.current(   ) )  
+        self.button_mode(   ).setLabel( self.mode.current(      ) ) 
 
