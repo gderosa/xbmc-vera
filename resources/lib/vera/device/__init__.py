@@ -40,3 +40,11 @@ def dim(device, vera_controller, level):
 '&newLoadlevelTarget=' + str(level)                                           \
         )
 
+def hvac_set_mode(device, vera_controller, mode):
+    if device['category'] == category.HVAC:
+        vera_controller.GET( \
+'/data_request?id=action&DeviceNum=' + str(device['id'])                    + \
+'&serviceId=urn:upnp-org:serviceId:HVAC_UserOperatingMode1'                 + \
+'&action=SetModeTarget&NewModeTarget=' + mode
+        )
+

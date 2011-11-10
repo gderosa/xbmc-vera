@@ -58,7 +58,10 @@ class HVAC( xbmcgui.WindowXMLDialog ):
     def onAction(self, action):
         focusedControl = self.getFocus()
 
-        if action in (ACTION_PREVIOUS_MENU, ACTION_ENTER):
+        if      action == ACTION_PREVIOUS_MENU:
+            self.close()
+        elif    action == ACTION_ENTER:
+            self.commit()
             self.close()
         else:
             if focusedControl == self.slider_heat():
@@ -113,4 +116,7 @@ class HVAC( xbmcgui.WindowXMLDialog ):
         
         _msg = message.hvac.button_mode( self.mode.current )
         self.button_mode().setLabel( _msg.upper() )  
+
+    def commit(self):
+        vera.device.hvac_set_mode(self.device, self.vera, self.mode.current)
 
