@@ -24,13 +24,12 @@ class HVAC( xbmcgui.WindowXMLDialog ):
         self.parent = kwargs['parent']
         self.vera   = self.parent.vera
 
-        self.heat = Temperature(c=20)
-        self.cool = Temperature(c=18)
-        self.temperatureUnit = 'C'
+        self.temperatureUnit = self.vera.data['temperature'] 
+        self.heat = Temperature( self.device['heatsp'], self.temperatureUnit ) 
+        self.cool = Temperature( self.device['coolsp'], self.temperatureUnit )
 
         self.mode       = Cycle(vera.device.HVAC_MODES)
         self.fanMode    = Cycle(vera.device.HVAC_FAN_MODES)
-
 
     def onInit(self):
         self.update()

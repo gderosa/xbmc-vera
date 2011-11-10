@@ -1,11 +1,15 @@
 class Temperature(object):
 
-    def __init__(self, k=None, c=None, f=None):
-        if      k != None:
+    def __init__(self, value=None, unit=None, k=None, c=None, f=None):
+        if  value != None:
+            if unit.lower() == 'k': self.setk( value )
+            if unit.lower() == 'c': self.setc( value )
+            if unit.lower() == 'f': self.setf( value )             
+        elif k != None:
             self.setk( k ) 
-        elif    c != None:
+        elif c != None:
             self.setc( c ) 
-        elif    f != None:
+        elif f != None:
             self.setf( f )
         else:
             self.setk( 0.0 )

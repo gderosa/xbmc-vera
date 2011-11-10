@@ -12,8 +12,6 @@ FAN_MODES = {
     'ContinuousOn':     'Always On'
 }
 
-
-
 def button_fan(mode):
     return FAN_MODES[mode]
 
