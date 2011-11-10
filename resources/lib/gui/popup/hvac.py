@@ -121,3 +121,12 @@ class HVAC( xbmcgui.WindowXMLDialog ):
         vera.device.hvac_set_mode(self.device, self.vera, self.mode.current)
         vera.device.hvac_set_fan(self.device, self.vera, self.fanMode.current)
 
+        heatsp = self.heat.c
+        coolsp = self.cool.c
+        if self.temperatureUnit == 'F':
+            heatsp = self.heat.f
+            coolsp = self.cool.f
+        vera.device.hvac_set_points(
+                self.device, self.vera, heat=heatsp, cool=coolsp
+        )
+

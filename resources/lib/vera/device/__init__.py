@@ -55,3 +55,19 @@ def hvac_set_fan(device, vera_controller, mode):
 '&action=SetMode&NewMode=' + mode
         )
 
+def hvac_set_points(device, vera_controller, heat=None, cool=None):
+    if device['category'] == category.HVAC:
+        if heat != None:
+            vera_controller.GET( \
+'/data_request?id=action&DeviceNum=' + str(device['id'])                    + \
+'&serviceId=urn:upnp-org:serviceId:TemperatureSetpoint1_Heat'               + \
+'&action=SetCurrentSetpoint&NewCurrentSetpoint=' + str(heat)
+            )
+        if cool != None:
+            vera_controller.GET( \
+'/data_request?id=action&DeviceNum=' + str(device['id'])                    + \
+'&serviceId=urn:upnp-org:serviceId:TemperatureSetpoint1_Cool'               + \
+'&action=SetCurrentSetpoint&NewCurrentSetpoint=' + str(cool)
+            )
+
+
