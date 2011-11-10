@@ -19,7 +19,7 @@
       <texture>bg0.png</texture>
     </control>
     
-    <control type="label">
+    <control type="label" id="105202">
       <posx>32</posx>
       <posy>52</posy>
       <width>40</width>
@@ -47,7 +47,7 @@
       <focusedcolor>FF66BBFF</focusedcolor>      
     </control>
         
-    <control type="label">
+    <control type="label" id="105203">
       <posx>32</posx>
       <posy>92</posy>
       <width>40</width>
@@ -78,7 +78,7 @@
       <label>20°C</label>
     </control>
     
-    <control type="label">
+    <control type="label" id="105204">
       <posx>32</posx>
       <posy>130</posy>
       <width>40</width>
@@ -109,7 +109,7 @@
       <label>10°C</label>
     </control>
 
-    <control type="label">
+    <control type="label" id="105205">
       <posx>32</posx>
       <posy>172</posy>
       <width>40</width>
