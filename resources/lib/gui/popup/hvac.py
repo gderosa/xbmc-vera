@@ -5,7 +5,7 @@ from    util.temperature            import Temperature
 from    util.cycle                  import Cycle
 import  vera.device
 from    gui.xbmc                    import *
-from    gui                         import controlid
+from    gui                         import controlid, message
 
 __addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')
@@ -103,6 +103,9 @@ class HVAC( xbmcgui.WindowXMLDialog ):
             self.slider_cool().setPercent(percent)
         self.label_cool().setLabel(u'%.1f \xb0C' % self.cool.c)
 
-        self.button_fan(    ).setLabel( self.fanMode.current(   ) )  
-        self.button_mode(   ).setLabel( self.mode.current(      ) ) 
+        _msg = message.hvac.button_fan( self.fanMode.current() )
+        self.button_fan().setLabel( _msg.upper() )   
+        
+        _msg = message.hvac.button_mode( self.mode.current() )
+        self.button_mode().setLabel( _msg.upper() )  
 

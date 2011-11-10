@@ -2,7 +2,7 @@
 
 from vera.device import category 
 
-HVAC_MODES      = ['Off', 'HeatOn', 'CoolOn', 'AutoChangeOver']
+HVAC_MODES      = ['Off', 'AutoChangeOver', 'HeatOn', 'CoolOn'] 
 HVAC_FAN_MODES  = ['Auto', 'ContinuousOn']
 
 # turn on/off a BinaryLight, arm/bypass a motion sensor etc.
