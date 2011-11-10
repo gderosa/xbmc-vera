@@ -18,7 +18,27 @@
       <height>260</height>
       <texture>bg0.png</texture>
     </control>
-
+    
+    <control type="label">
+      <posx>32</posx>
+      <posy>52</posy>
+      <width>40</width>
+      <align>center</align>
+      <label>&#9651;</label>
+    </control>
+    <control type="label">
+      <posx>80</posx>
+      <posy>52</posy>
+      <label>Mode</label>
+    </control>
+    
+    <control type="label">
+      <posx>32</posx>
+      <posy>92</posy>
+      <width>40</width>
+      <align>center</align>
+      <label>&#9665; &#9655;</label>
+    </control>    
     <control type="label">
       <posx>80</posx>
       <posy>92</posy>
@@ -39,6 +59,14 @@
       <posy>92</posy>
       <label>20°C</label>
     </control>
+    
+    <control type="label">
+      <posx>32</posx>
+      <posy>130</posy>
+      <width>40</width>
+      <align>center</align>
+      <label>&#9665; &#9655;</label>
+    </control>        
     <control type="label">
       <posx>80</posx>
       <posy>132</posy>
@@ -58,6 +86,19 @@
       <posx>380</posx>
       <posy>132</posy>
       <label>10°C</label>
+    </control>
+
+    <control type="label">
+      <posx>32</posx>
+      <posy>172</posy>
+      <width>40</width>
+      <align>center</align>
+      <label>&#9661;</label>
+    </control>
+    <control type="label">
+      <posx>80</posx>
+      <posy>172</posy>
+      <label>Fan</label>
     </control>
 
   </controls>
