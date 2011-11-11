@@ -18,7 +18,6 @@
       <height>260</height>
       <texture>bg0.png</texture>
     </control>
-    
 
     <control type="label">
       <posx>80</posx>
@@ -34,13 +33,29 @@
       <textureslidernib>controls/slider_knob.png</textureslidernib>
       <textureslidernibfocus>controls/slider_knob_focus.png</textureslidernibfocus>
     </control>
+    
     <control type="label" id="105203">
-      <posx>235</posx>
+      <posx>234</posx>
       <posy>156</posy>
       <width>40</width>
       <align>center</align>
       <label>&#9665; &#9655;</label>
     </control>        
+    
+    <control type="label" id="105202">
+      <posx>380</posx>
+      <posy>71</posy>
+      <width>40</width>
+      <align>center</align>
+      <label>&#9651;</label>
+    </control>
+    <control type="label" id="105205">
+      <posx>380</posx>
+      <posy>151</posy>
+      <width>40</width>
+      <align>center</align>
+      <label>&#9661;</label>
+    </control>    
     
   </controls>
 </window>
