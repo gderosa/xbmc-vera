@@ -18,7 +18,13 @@
       <height>260</height>
       <texture>bg0.png</texture>
     </control>
+    
 
+    <control type="label">
+      <posx>80</posx>
+      <posy>112</posy>
+      <label>Level</label>
+    </control>
     <control type="slider" id="102002">
       <posx>153</posx>
       <posy>120</posy>
@@ -28,6 +34,13 @@
       <textureslidernib>controls/slider_knob.png</textureslidernib>
       <textureslidernibfocus>controls/slider_knob.png</textureslidernibfocus>
     </control>
-
+    <control type="label" id="105203">
+      <posx>234</posx>
+      <posy>160</posy>
+      <width>40</width>
+      <align>center</align>
+      <label>&#9665; &#9655;</label>
+    </control>        
+    
   </controls>
 </window>
