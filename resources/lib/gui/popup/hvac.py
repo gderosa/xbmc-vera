@@ -98,7 +98,8 @@ class HVAC( xbmcgui.WindowXMLDialog ):
                     ( (self.heat.k - T_MIN) / (T_MAX - T_MIN) ) * 100 \
             ) )
             self.slider_heat().setPercent(percent)
-        self.label_heat().setLabel(u'%.1f \xb0C' % self.heat.c) 
+        self.label_heat().setLabel( \
+                u'%.1f \xb0%s' % (self.heat.value, self.heat.unit) ) 
 
         if      self.cool.k < T_MIN:
             self.slider_cool().setPercent(0)
@@ -109,7 +110,8 @@ class HVAC( xbmcgui.WindowXMLDialog ):
                     ( (self.cool.k - T_MIN) / (T_MAX - T_MIN) ) * 100 \
             ) )
             self.slider_cool().setPercent(percent)
-        self.label_cool().setLabel(u'%.1f \xb0C' % self.cool.c)
+        self.label_cool().setLabel( \
+                u'%.1f \xb0%s' % (self.cool.value, self.cool.unit) ) 
 
         _msg = message.hvac.button_fan( self.fanMode.current )
         self.button_fan().setLabel( _msg.upper() )   
@@ -121,11 +123,8 @@ class HVAC( xbmcgui.WindowXMLDialog ):
         vera.device.hvac_set_mode(self.device, self.vera, self.mode.current)
         vera.device.hvac_set_fan(self.device, self.vera, self.fanMode.current)
 
-        heatsp = self.heat.c
-        coolsp = self.cool.c
-        if self.temperatureUnit == 'F':
-            heatsp = self.heat.f
-            coolsp = self.cool.f
+        heatsp = self.heat.value
+        coolsp = self.cool.value
         vera.device.hvac_set_points(
                 self.device, self.vera, heat=heatsp, cool=coolsp
         )
