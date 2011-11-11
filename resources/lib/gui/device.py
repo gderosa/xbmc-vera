@@ -129,7 +129,7 @@ def essentialInfo(device, temperature_unit=''):
 def popup(parent_, device_):
     popup = None
 
-    if device_['category'] == DIMMABLE_LIGHT:
+    if device_['category'] in ( DIMMABLE_LIGHT, WINDOW_COVERING ):
         popup = gui.popup.DimmableLight(                    \
                 'dimmable-light.xml', __cwd__, 'Default',   \
                 parent=parent_, device = device_            )  

@@ -15,9 +15,7 @@ import vera.device.category
 import gui.controlid.main as controlid
 import gui.device
 
-
-# keymap.xml ?
-ACTION_PREVIOUS_MENU = 10
+from gui.xbmc import * 
 
 __addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')
@@ -33,7 +31,6 @@ class UpdateThread(threading.Thread):
             try:
                 self.gui.vera.update()
                 self.gui.update()
-                print('UpdateThread.run() cycle completed')
             except:
                 if self.gui.runUpdateThread:
                     print('exception: sleep for 1 sec')

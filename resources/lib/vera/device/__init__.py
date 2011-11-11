@@ -33,7 +33,8 @@ def toggle(device, vera_controller):
 
 
 def dim(device, vera_controller, level):
-    if device['category'] == category.DIMMABLE_LIGHT:
+    if device['category'] in \
+            ( category.DIMMABLE_LIGHT, category.WINDOW_COVERING ):
         vera_controller.GET( \
 '/data_request?id=action&DeviceNum=' + str(device['id'])                    + \
 '&serviceId=urn:upnp-org:serviceId:Dimming1&action=SetLoadLevelTarget'      + \
