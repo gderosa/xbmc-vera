@@ -12,8 +12,9 @@ import vera
 import vera.device 
 import vera.device.category
 
-import gui.controlid as controlid
+import gui.controlid.main as controlid
 import gui.device
+
 
 # keymap.xml ?
 ACTION_PREVIOUS_MENU = 10

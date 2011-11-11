@@ -1,3 +1,5 @@
+from gui.controlid import room
+
 # A collection of constants: the Control IDs matching the skin xml
 # as in <control ... id="_the_id_">
 

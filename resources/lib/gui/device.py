@@ -6,7 +6,7 @@ import xbmcaddon
 from vera.device.category   import *
 from vera.device.state      import *
 
-import gui.popup
+import gui.popup.all_categories
 
 __addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')

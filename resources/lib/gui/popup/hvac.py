@@ -6,6 +6,7 @@ from    util.cycle                  import Cycle
 import  vera.device
 from    gui.xbmc                    import *
 from    gui                         import controlid, message
+import  gui.controlid.hvac, gui.message.hvac
 
 __addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')
@@ -129,3 +130,4 @@ class HVAC( xbmcgui.WindowXMLDialog ):
                 self.device, self.vera, heat=heatsp, cool=coolsp
         )
 
+gui.popup.HVAC = HVAC

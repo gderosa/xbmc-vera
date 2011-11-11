@@ -4,10 +4,11 @@ import  threading
 import  xbmcaddon
 import  xbmcgui
 
-from    util.temperature            import Temperature
+from    util.temperature                import  Temperature
 import  vera.device
-from    gui.xbmc                    import *
-from    gui                         import controlid
+from    gui.xbmc                        import  *
+import  gui.controlid                   as      controlid
+import  gui.controlid.dimmable_light
 
 __addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')
@@ -52,4 +53,4 @@ class DimmableLight( xbmcgui.WindowXMLDialog ):
         elif action == ACTION_MOVE_DOWN:
             self.slider().setPercent(0)
 
-
+gui.popup.DimmableLight = DimmableLight
