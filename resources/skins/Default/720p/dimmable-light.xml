@@ -32,11 +32,11 @@
       <height>20</height>
       <texturesliderbar>controls/slider_bg.png</texturesliderbar>
       <textureslidernib>controls/slider_knob.png</textureslidernib>
-      <textureslidernibfocus>controls/slider_knob.png</textureslidernibfocus>
+      <textureslidernibfocus>controls/slider_knob_focus.png</textureslidernibfocus>
     </control>
     <control type="label" id="105203">
-      <posx>234</posx>
-      <posy>160</posy>
+      <posx>235</posx>
+      <posy>156</posy>
       <width>40</width>
       <align>center</align>
       <label>&#9665; &#9655;</label>
