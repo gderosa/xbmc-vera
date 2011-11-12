@@ -1,4 +1,7 @@
+# Also used for Window Covering
+
 import  time
+import  socket
 import  threading
 
 import  xbmcaddon
@@ -26,8 +29,14 @@ class DimLightThread( threading.Thread ):
         slider = self.gui.getControl(controlid.dimmable_light.SLIDER)
         while(self.runThread):
             newValue = slider.getPercent()
-            if newValue != int( float( self.device['level'] ) ):  
-                vera.device.dim(self.device, self.vera, newValue)
+            if newValue != int( float( self.device['level'] ) ): 
+                try:
+                    vera.device.dim(self.device, self.vera, newValue)
+                except socket.error as e:
+                    msg = 'socket: %s' % e.__str__()
+                    error_dialog = xbmcgui.Dialog()
+                    error_dialog.ok( 'Network Connection Error', msg ) 
+                    self.runThread = False
             time.sleep(1)
 
 class DimmableLight( xbmcgui.WindowXMLDialog ):

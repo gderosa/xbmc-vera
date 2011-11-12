@@ -38,7 +38,7 @@ class UpdateThread(threading.Thread):
                 if self.gui.runUpdateThread:
                     msg = 'socket: %s' % e.__str__() 
                     error_dialog = xbmcgui.Dialog()
-                    error_dialog.ok( 'Error', msg )
+                    error_dialog.ok( 'Network Connection Error', msg )
             except httplib.BadStatusLine:
                 if self.gui.runUpdateThread:
                     raise
