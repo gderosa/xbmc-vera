@@ -59,8 +59,9 @@ class Controller:
         response = http.getresponse() # it's an IO-like object
         self.data = json.load(response)
 
-    def GET(self, full_path):
-        http = httplib.HTTPConnection(self.host, self.port)
+    # Tipically used to perform actions
+    def GET(self, full_path, timeout=2):
+        http = httplib.HTTPConnection(self.host, self.port, timeout=timeout)
         http.request('GET', full_path)
         response = http.getresponse()
         return response.read()

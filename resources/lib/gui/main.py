@@ -121,8 +121,13 @@ class GUI( xbmcgui.WindowXMLDialog ):
         elif    controlID in self.buttonIDToDevice.keys():
             device = self.buttonIDToDevice[controlID]
             if gui.device.simplySwitchable(device):
-                vera.device.toggle(device, vera_controller=self.vera) 
-            else: # requires a new window
+                try:
+                    vera.device.toggle(device, vera_controller=self.vera) 
+                except socket.error as e:
+                    msg = 'socket: %s' % e.__str__() 
+                    error_dialog = xbmcgui.Dialog()
+                    error_dialog.ok( 'Network Connection Error', msg )
+            else: # requires a new window, has its own exception handling
                 gui.device.popup(self, device)
 
     def update(self):
