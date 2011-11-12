@@ -12,15 +12,15 @@
   <controls>  
     <control type="image">
       <posx>50</posx>
-      <posy>16</posy>
+      <posy>22</posy>
       <width>1180</width>
-      <height>688</height>
+      <height>668</height>
       <texture>bg.png</texture>
     </control>
     
     <control type="label" id="101">
       <posx>0</posx>
-      <posy>70</posy>
+      <posy>54</posy>
       <width>1280</width>
       <height>20</height>
       <font>font13_title</font>
@@ -36,7 +36,7 @@
       <itemgap>16</itemgap>
       <ondown>110</ondown>
       <posx>0</posx>
-      <posy>120</posy>
+      <posy>104</posy>
       <width>1280</width>
       <orientation>horizontal</orientation>
       <align>center</align>
@@ -64,10 +64,10 @@
 
       <control type="grouplist" id="103">
         <onup>2002</onup>
-        <posy>200</posy>
+        <posy>182</posy>
         <posx>230</posx>
         <width>400</width>
-        <height>480</height>
+        <height>470</height>
         <itemgap>10</itemgap>
         <pagecontrol>21</pagecontrol>
         <scrolltime>0</scrolltime>
@@ -90,9 +90,9 @@
       
       <control type="grouplist" id="105">
         <posx>660</posx>
-        <posy>200</posy>
+        <posy>182</posy>
         <width>400</width>
-        <height>480</height>
+        <height>470</height>
         <itemgap>10</itemgap>
         <orientation>vertical</orientation>
 
