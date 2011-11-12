@@ -30,22 +30,32 @@ class UpdateThread(threading.Thread):
 
     def run(self):
         while(self.gui.runUpdateThread):
+            t0 = time.time()
+            ok = False
             try:
                 self.gui.vera.update()
                 self.gui.update()
+                ok = True
             except socket.error as e:
-                msg = 'socket: %s' % e.__str__() 
-                if msg != self.lastErrorMsg:
-                    error_dialog = xbmcgui.Dialog()
-                    error_dialog.ok( 'Error', msg )
-                self.lastErrorMsg = msg
                 if self.gui.runUpdateThread:
-                    time.sleep(1)
+                    msg = 'socket: %s' % e.__str__() 
+                    if msg != self.lastErrorMsg:
+                        error_dialog = xbmcgui.Dialog()
+                        error_dialog.ok( 'Error', msg )
+                        self.lastErrorMsg = msg
             except httplib.BadStatusLine:
                 if self.gui.runUpdateThread:
                     raise
                 else: # socket has been deliberately shutdown
                     pass
+            finally:
+                if self.gui.runUpdateThread and not ok:
+                    dt_min = 10.0
+                    dt = time.time() - t0
+                    if dt < dt_min: 
+                        time.sleep(dt_min - dt) # do not flood CPU!
+
+
 
 class GUI( xbmcgui.WindowXMLDialog ):
 
@@ -70,7 +80,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
             self.setUpdateThread()
         self.updateThread.start()
     
-    def killUpdateThread(self):
+    def killUpdateThread(self, wait=False):
         self.runUpdateThread = False
         
         try:
@@ -80,7 +90,8 @@ class GUI( xbmcgui.WindowXMLDialog ):
         except AttributeError:
             pass
 
-        self.updateThread.join()
+        if wait: 
+            self.updateThread.join()
         self.updateThread = None
 
     def exit(self):
