@@ -54,7 +54,7 @@ class Controller:
                         self.data['devices'][i].update(updated_device)
 
     def getData(self):
-        http = httplib.HTTPConnection(self.host, self.port)
+        http = httplib.HTTPConnection(self.host, self.port, timeout=3)
         http.request('GET', '/data_request?id=sdata')
         response = http.getresponse() # it's an IO-like object
         self.data = json.load(response)

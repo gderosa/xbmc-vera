@@ -25,15 +25,20 @@ class UpdateThread(threading.Thread):
     def __init__(self, gui_):
         threading.Thread.__init__(self)
         self.gui = gui_
+        self.lastErrorMsg = ''
 
     def run(self):
         while(self.gui.runUpdateThread):
             try:
                 self.gui.vera.update()
                 self.gui.update()
-            except:
+            except Exception as e:
+                msg = '%s: %s' % ( e.__class__.__module__, e.__str__() )
+                if msg != self.lastErrorMsg:
+                    error_dialog = xbmcgui.Dialog()
+                    error_dialog.ok( 'Error', msg )
+                self.lastErrorMsg = msg
                 if self.gui.runUpdateThread:
-                    print('exception: sleep for 1 sec')
                     time.sleep(1)
                 else:
                     # Socket has been killed by GUI.exit() and most likely
