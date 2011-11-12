@@ -3,6 +3,7 @@ import re
 import time
 import threading
 import socket
+import httplib
 
 import xbmc
 import xbmcgui
@@ -32,19 +33,19 @@ class UpdateThread(threading.Thread):
             try:
                 self.gui.vera.update()
                 self.gui.update()
-            except Exception as e:
-                msg = '%s: %s' % ( e.__class__.__module__, e.__str__() )
+            except socket.error as e:
+                msg = 'socket: %s' % e.__str__() 
                 if msg != self.lastErrorMsg:
                     error_dialog = xbmcgui.Dialog()
                     error_dialog.ok( 'Error', msg )
                 self.lastErrorMsg = msg
                 if self.gui.runUpdateThread:
                     time.sleep(1)
-                else:
-                    # Socket has been killed by GUI.exit() and most likely
-                    # a BadStatusLine has been raised: no need to sleep
-                    # in this case
-                    pass 
+            except httplib.BadStatusLine:
+                if self.gui.runUpdateThread:
+                    raise
+                else: # socket has been deliberately shutdown
+                    pass
 
 class GUI( xbmcgui.WindowXMLDialog ):
 
