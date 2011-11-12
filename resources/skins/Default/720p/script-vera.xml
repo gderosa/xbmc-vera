@@ -59,16 +59,15 @@
     <control type="group" id="110">
       <control type="grouplist" id="103">
         <onup>2002</onup>
+        <ondown>1019</ondown> <!-- disallow cycling -->
         <posy>182</posy>
         <posx>230</posx>
         <width>400</width>
         <height>470</height>
         <itemgap>10</itemgap>
-        <pagecontrol>21</pagecontrol>
         <scrolltime>0</scrolltime>
         <orientation>vertical</orientation>
         <onright>105</onright>
-        <!-- <usecontrolcoords>true</usecontrolcoords>          -->
         <control type="button" id="1001">
           <label>(no rooms)</label>
           <width>390</width>
@@ -769,10 +768,10 @@
             <align>right</align>
           </control>
         </control>
-        <control type="group" id="33020"><!-- allow cycling -->
+        <control type="group" id="33020">
           <visible>false</visible>
           <control type="button" id="11020">
-            <ondown>11001</ondown>
+            <ondown>11020</ondown> <!-- disallow cycling -->
             <onup>11019</onup>
           </control>
         </control>
