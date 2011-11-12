@@ -26,7 +26,6 @@ class UpdateThread(threading.Thread):
     def __init__(self, gui_):
         threading.Thread.__init__(self)
         self.gui = gui_
-        #self.lastErrorMsg = ''
 
     def run(self):
         while(self.gui.runUpdateThread):
@@ -38,10 +37,8 @@ class UpdateThread(threading.Thread):
             except socket.error as e:
                 if self.gui.runUpdateThread:
                     msg = 'socket: %s' % e.__str__() 
-                    #if msg != self.lastErrorMsg:
                     error_dialog = xbmcgui.Dialog()
                     error_dialog.ok( 'Error', msg )
-                    #self.lastErrorMsg = msg
             except httplib.BadStatusLine:
                 if self.gui.runUpdateThread:
                     raise
