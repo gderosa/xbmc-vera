@@ -60,7 +60,7 @@ class Controller:
         self.data = json.load(response)
 
     # Tipically used to perform actions
-    def GET(self, full_path, timeout=2):
+    def GET(self, full_path, timeout=3):
         http = httplib.HTTPConnection(self.host, self.port, timeout=timeout)
         http.request('GET', full_path)
         response = http.getresponse()

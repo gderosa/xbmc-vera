@@ -1,3 +1,5 @@
+import  socket
+
 import  xbmcaddon
 import  xbmcgui
 
@@ -121,13 +123,23 @@ class HVAC( xbmcgui.WindowXMLDialog ):
         self.button_mode().setLabel( _msg.upper() )  
 
     def commit(self):
-        vera.device.hvac_set_mode(self.device, self.vera, self.mode.current)
-        vera.device.hvac_set_fan(self.device, self.vera, self.fanMode.current)
+        try:
+            vera.device.hvac_set_mode( \
+                    self.device, self.vera, self.mode.current )
+            vera.device.hvac_set_fan( \
+                    self.device, self.vera, self.fanMode.current )
 
-        heatsp = self.heat.value
-        coolsp = self.cool.value
-        vera.device.hvac_set_points(
-                self.device, self.vera, heat=heatsp, cool=coolsp
-        )
+            heatsp = self.heat.value
+            coolsp = self.cool.value
+            vera.device.hvac_set_points( \
+                    self.device, self.vera, heat=heatsp, cool=coolsp )
+        except socket.error as e:
+            msg = 'socket: %s' % e.__str__()
+            error_dialog = xbmcgui.Dialog()
+            error_dialog.ok( 'Network Connection Error', msg )
 
+
+
+# Compat
 gui.popup.HVAC = HVAC
+
