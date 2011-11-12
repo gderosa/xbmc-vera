@@ -48,16 +48,23 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.buttonIDToDevice = {}
         self.setVera()
         self.currentRoom = None
-
-        self.runUpdateThread = True
-        self.updateThread = UpdateThread(self)
+        self.setUpdateThread()
 
     def onInit(self):
         self.hideRooms()
         self.hideRoomDevices()
-        self.updateThread.start()
+        self.startUpdateThread()
 
-    def exit(self):
+    def setUpdateThread(self):
+        self.runUpdateThread = True
+        self.updateThread = UpdateThread(self)
+
+    def startUpdateThread(self):
+        if not self.updateThread:
+            self.setUpdateThread()
+        self.updateThread.start()
+    
+    def killUpdateThread(self):
         self.runUpdateThread = False
         
         # Yeah, this is necessary to 'kill' the awaiting http client
@@ -65,6 +72,10 @@ class GUI( xbmcgui.WindowXMLDialog ):
             self.vera.updateConnection.sock.shutdown(socket.SHUT_RDWR)
 
         self.updateThread.join()
+        self.updateThread = None
+
+    def exit(self):
+        self.killUpdateThread()
         self.close()
 
     def onAction(self, action):
@@ -75,7 +86,9 @@ class GUI( xbmcgui.WindowXMLDialog ):
         # Top buttons
         if      controlID == controlid.SETTINGS:
             __addon__.openSettings()
+            self.killUpdateThread()
             self.setVera()
+            self.startUpdateThread()
         elif    controlID == controlid.GET_DATA:
             self.vera.getData()
             self.updateRooms()
