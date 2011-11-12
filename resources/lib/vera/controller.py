@@ -27,7 +27,7 @@ class Controller:
             query_string = \
 'id=sdata&loadtime=%d&dataversion=%d&timeout=%d&minimumdelay=%d' % \
 (loadtime, dataversion, POLLING_TIMEOUT, MINIMUM_DELAY_MSECS)
-            # must be "killable" by parent thread via .sock.shotdown(...)
+            # must be "killable" by parent thread via .sock.shutdown(...)
             self.updateConnection = httplib.HTTPConnection( \
                         self.host, self.port, timeout=HTTP_TIMEOUT )  
             self.updateConnection.request('GET', '/data_request?%s' % query_string)

@@ -67,9 +67,12 @@ class GUI( xbmcgui.WindowXMLDialog ):
     def killUpdateThread(self):
         self.runUpdateThread = False
         
-        # Yeah, this is necessary to 'kill' the awaiting http client
-        if self.vera.updateConnection.sock:
-            self.vera.updateConnection.sock.shutdown(socket.SHUT_RDWR)
+        try:
+            # Yeah, this is necessary to 'kill' the awaiting http client
+            if self.vera.updateConnection.sock:
+                self.vera.updateConnection.sock.shutdown(socket.SHUT_RDWR)
+        except AttributeError:
+            pass
 
         self.updateThread.join()
         self.updateThread = None
