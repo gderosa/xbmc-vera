@@ -7,6 +7,7 @@ from vera.device.category   import *
 from vera.device.state      import *
 
 import gui.popup.all_categories
+import gui.message.hvac
 
 __addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')
@@ -101,15 +102,26 @@ def essentialInfo(device, temperature_unit=''):
                 return 'Bypass'
     if device['category'] == THERMOSTAT:
         mode, heat, cool = device['mode'], device['heatsp'], device['coolsp']
-        values = mode, heat, cool, temperature_unit
-        if      mode == 'Off':
-            return u'Mode: %s  [COLOR grey]Heat: %s  Cool: %s  (\xb0%s)[/COLOR]' % values
-        elif    'Heat' in mode:
-            return u'Mode: %s  Heat: %s  [COLOR grey]Cool: %s[/COLOR]  (\xb0%s)' % values
-        elif    'Cool' in mode:
-            return u'Mode: %s  [COLOR grey]Heat: %s[/COLOR]  Cool: %s  (\xb0%s)' % values
+        mode_short = gui.message.hvac.button_mode( mode ) 
+        if 'temperature' in device.keys():
+            temperature_str = \
+                    u'%s \xb0%s' % ( device['temperature'], temperature_unit )
         else:
-            return u'Mode: %s  Heat: %s  Cool: %s  (\xb0%s)'                     % values
+            temperature_str = \
+                    u'\xb0%s'    % temperature_unit
+        values = mode_short, heat, cool, temperature_str
+        if      mode == 'Off':
+            return \
+u'Mode: %s  [COLOR grey]Heat: %s  Cool: %s  (%s)[/COLOR]' % values
+        elif    'Heat' in mode:
+            return \
+u'Mode: %s  Heat: %s  [COLOR grey]Cool: %s[/COLOR]  (%s)' % values
+        elif    'Cool' in mode:
+            return \
+u'Mode: %s  [COLOR grey]Heat: %s[/COLOR]  Cool: %s  (%s)' % values
+        else:
+            return \
+u'Mode: %s  Heat: %s  Cool: %s  (%s)'                     % values
     if device['category'] == DOOR_LOCK:
         if 'locked' in device.keys():
             if int(device['locked']):
@@ -121,7 +133,8 @@ def essentialInfo(device, temperature_unit=''):
     if device['category'] == HUMIDITY_SENSOR:
         return '%s%%' % device['humidity']       
     if device['category'] == TEMPERATURE_SENSOR:
-        return u'%s\xb0%s' % (device['temperature'], temperature_unit) # degree sign
+        return u'%s\xb0%s' % (device['temperature'], temperature_unit) 
+                # degree sign
     if device['category'] == LIGHT_SENSOR:
         return 'Level: %s' % device['light']
     return ''
