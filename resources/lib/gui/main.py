@@ -43,7 +43,7 @@ class UpdateThread(threading.Thread):
                 if self.gui.runUpdateThread:
                     raise
                 else: # socket has been deliberately shutdown
-                    ok = True
+                    pass
             finally:
                 if not ok:
                     self.gui.runUpdateThread = False
