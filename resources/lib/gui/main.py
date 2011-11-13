@@ -43,7 +43,7 @@ class UpdateThread(threading.Thread):
                 if self.gui.runUpdateThread:
                     raise
                 else: # socket has been deliberately shutdown
-                    pass
+                    ok = True
             finally:
                 if not ok:
                     self.gui.runUpdateThread = False
@@ -99,7 +99,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
         # Top buttons
         if      controlID == controlid.SETTINGS:
             __addon__.openSettings()
-            self.killUpdateThread()
+            self.killUpdateThread(wait=True)
             self.setVera()
             self.startUpdateThread()
         elif    controlID == controlid.GET_DATA:
