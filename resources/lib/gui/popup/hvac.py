@@ -1,5 +1,6 @@
 import  socket
 
+import  xbmc
 import  xbmcaddon
 import  xbmcgui
 
@@ -59,6 +60,8 @@ class HVAC( xbmcgui.WindowXMLDialog ):
         return self.getControl(controlid.hvac.MODE)
 
     def onAction(self, action):
+        xbmc.enableNavSounds(True)
+
         try:
             focusedControl = self.getFocus()
         except TypeError:
@@ -80,9 +83,11 @@ class HVAC( xbmcgui.WindowXMLDialog ):
                 elif action == ACTION_MOVE_LEFT:
                     self.heat.k -= T_STEP
                     self.update_heat()
+                    xbmc.enableNavSounds(False)
                 elif action == ACTION_MOVE_RIGHT:
                     self.heat.k += T_STEP
                     self.update_heat()
+                    xbmc.enableNavSounds(False)
             elif focusedControl == self.slider_cool():
                 if action in (ACTION_MOUSE_CLICK + ACTION_MOUSE_WHEEL) or \
                         action == ACTION_MOUSE_DRAG:

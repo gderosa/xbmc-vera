@@ -4,6 +4,7 @@ import  time
 import  socket
 import  threading
 
+import  xbmc
 import  xbmcaddon
 import  xbmcgui
 
@@ -56,6 +57,11 @@ class DimmableLight( xbmcgui.WindowXMLDialog ):
         return self.getControl(controlid.dimmable_light.SLIDER)
 
     def onAction(self, action):
+        if action in (ACTION_MOVE_LEFT, ACTION_MOVE_RIGHT):
+            xbmc.enableNavSounds(False)
+        else:
+            xbmc.enableNavSounds(True)
+
         if action in (ACTION_PREVIOUS_MENU, ACTION_ENTER):
             self.dimmerThread.runThread = False
             self.close()
