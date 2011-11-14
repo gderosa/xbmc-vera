@@ -59,7 +59,10 @@ class HVAC( xbmcgui.WindowXMLDialog ):
         return self.getControl(controlid.hvac.MODE)
 
     def onAction(self, action):
-        focusedControl = self.getFocus()
+        try:
+            focusedControl = self.getFocus()
+        except TypeError:
+            return
 
         if      action == ACTION_PREVIOUS_MENU:
             self.close()
@@ -68,59 +71,91 @@ class HVAC( xbmcgui.WindowXMLDialog ):
             self.close()
         else:
             if focusedControl == self.slider_heat():
-                if action == ACTION_MOVE_LEFT:
+                if action in (ACTION_MOUSE_CLICK + ACTION_MOUSE_WHEEL) or \
+                        action == ACTION_MOUSE_DRAG: 
+                    percent_heat = self.slider_heat().getPercent()
+                    self.heat.k = \
+                            T_MIN + percent_heat*( ( T_MAX - T_MIN ) / 100.0 )
+                    self.update_heat(slider=False)
+                elif action == ACTION_MOVE_LEFT:
                     self.heat.k -= T_STEP
+                    self.update_heat()
                 elif action == ACTION_MOVE_RIGHT:
                     self.heat.k += T_STEP
+                    self.update_heat()
             elif focusedControl == self.slider_cool():
+                if action in (ACTION_MOUSE_CLICK + ACTION_MOUSE_WHEEL) or \
+                        action == ACTION_MOUSE_DRAG:
+                    percent_cool = self.slider_cool().getPercent()
+                    self.cool.k = \
+                            T_MIN + percent_cool*( ( T_MAX - T_MIN ) / 100.0 )
+                    self.update_cool(slider=False)
                 if action == ACTION_MOVE_LEFT:
                     self.cool.k -= T_STEP
+                    self.update_cool()
                 elif action == ACTION_MOVE_RIGHT:
                     self.cool.k += T_STEP
+                    self.update_cool()
             elif focusedControl == self.previouslyFocused == self.button_fan():
                 if action in (ACTION_MOVE_DOWN, ACTION_MOVE_RIGHT):
                     self.fanMode.cycle()
+                    self.update_fan()
                 elif action == ACTION_MOVE_LEFT:
                     self.fanMode.cycle_back()
+                    self.update_fan()
             elif focusedControl == self.previouslyFocused == self.button_mode():
                 if action in (ACTION_MOVE_UP, ACTION_MOVE_RIGHT):
                     self.mode.cycle()
+                    self.update_mode()
                 elif action == ACTION_MOVE_LEFT:
-                    self.mode.cycle_back()                   
-            self.update()
+                    self.mode.cycle_back()
+                    self.update_mode()
 
         self.previouslyFocused = focusedControl
 
     def update(self):
-        if      self.heat.k < T_MIN:
-            self.slider_heat().setPercent(0)
-        elif    self.heat.k > T_MAX:
-            self.slider_heat().setPercent(100)
-        else:
-            percent = int ( round( \
-                    ( (self.heat.k - T_MIN) / (T_MAX - T_MIN) ) * 100 \
-            ) )
-            self.slider_heat().setPercent(percent)
+        self.update_heat()
+        self.update_cool()
+        self.update_mode()
+        self.update_fan()
+
+    def update_heat(self, slider=True):
+        if slider:
+            if      self.heat.k < T_MIN:
+                self.slider_heat().setPercent(0)
+            elif    self.heat.k > T_MAX:
+                self.slider_heat().setPercent(100)
+            else:
+                percent = int ( round( \
+                        ( (self.heat.k - T_MIN) / (T_MAX - T_MIN) ) * 100 \
+                ) )
+                self.slider_heat().setPercent(percent)
+
         self.label_heat().setLabel( \
                 u'%.1f \xb0%s' % (self.heat.value, self.heat.unit) ) 
 
-        if      self.cool.k < T_MIN:
-            self.slider_cool().setPercent(0)
-        elif    self.cool.k > T_MAX:
-            self.slider_cool().setPercent(100)
-        else:
-            percent = int ( round( \
-                    ( (self.cool.k - T_MIN) / (T_MAX - T_MIN) ) * 100 \
-            ) )
-            self.slider_cool().setPercent(percent)
+    def update_cool(self, slider=True):
+        if slider:
+            if      self.cool.k < T_MIN:
+                self.slider_cool().setPercent(0)
+            elif    self.cool.k > T_MAX:
+                self.slider_cool().setPercent(100)
+            else:
+                percent = int ( round( \
+                        ( (self.cool.k - T_MIN) / (T_MAX - T_MIN) ) * 100 \
+                ) )
+                self.slider_cool().setPercent(percent)
+
         self.label_cool().setLabel( \
                 u'%.1f \xb0%s' % (self.cool.value, self.cool.unit) ) 
 
-        _msg = message.hvac.button_fan( self.fanMode.current )
-        self.button_fan().setLabel( _msg.upper() )   
-        
+    def update_mode(self):
         _msg = message.hvac.button_mode( self.mode.current )
         self.button_mode().setLabel( _msg.upper() )  
+
+    def update_fan(self):
+        _msg = message.hvac.button_fan( self.fanMode.current )
+        self.button_fan().setLabel( _msg.upper() )   
 
     def commit(self):
         try:
