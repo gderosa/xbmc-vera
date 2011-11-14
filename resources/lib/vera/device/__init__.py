@@ -15,8 +15,7 @@ def toggle(device, vera_controller):
         vera_controller.GET( \
 '/data_request?id=action&DeviceNum=' + str(device['id'])                    + \
 '&serviceId=urn:upnp-org:serviceId:SwitchPower1&action=SetTarget'           + \
-'&newTargetValue=' + newTargetValue                                         , \
-                timeout=2
+'&newTargetValue=' + newTargetValue                                         
         )
 
     elif device['category'] == category.MOTION_SENSOR:
@@ -26,8 +25,7 @@ def toggle(device, vera_controller):
         vera_controller.GET( \
 '/data_request?id=variableset&DeviceNum=' + str(device['id'])               + \
 '&serviceId=urn:micasaverde-com:serviceId:SecuritySensor1&Variable=Armed'   + \
-'&Value=' + Value                                                           , \
-                timeout=2
+'&Value=' + Value                                                            
         )
 
     elif device['category'] == category.DOOR_LOCK:
@@ -40,8 +38,7 @@ def dim(device, vera_controller, level):
         vera_controller.GET(
 '/data_request?id=action&DeviceNum=' + str(device['id'])                    + \
 '&serviceId=urn:upnp-org:serviceId:Dimming1&action=SetLoadLevelTarget'      + \
-'&newLoadlevelTarget=' + str(level)                                         , \
-                timeout=2
+'&newLoadlevelTarget=' + str(level)
         )
 
 def hvac_set_mode(device, vera_controller, mode):

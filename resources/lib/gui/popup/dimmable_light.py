@@ -16,6 +16,8 @@ import  gui.controlid.dimmable_light
 __addon__   = xbmcaddon.Addon('script.vera')
 __cwd__     = __addon__.getAddonInfo('path')
 
+DIMMING_INTERVAL = 0.25
+
 class DimLightThread( threading.Thread ):
 
     def __init__(self, gui_):
@@ -37,7 +39,7 @@ class DimLightThread( threading.Thread ):
                     error_dialog = xbmcgui.Dialog()
                     error_dialog.ok( 'Network Connection Error', msg ) 
                     self.runThread = False
-            time.sleep(1)
+            time.sleep(DIMMING_INTERVAL)
 
 class DimmableLight( xbmcgui.WindowXMLDialog ):
 
