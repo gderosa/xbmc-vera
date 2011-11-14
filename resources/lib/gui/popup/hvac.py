@@ -97,14 +97,16 @@ class HVAC( xbmcgui.WindowXMLDialog ):
                     self.cool.k += T_STEP
                     self.update_cool()
             elif focusedControl == self.previouslyFocused == self.button_fan():
-                if action in (ACTION_MOVE_DOWN, ACTION_MOVE_RIGHT):
+                if action in \
+(ACTION_MOVE_DOWN, ACTION_MOVE_RIGHT, ACTION_MOUSE_LEFT_CLICK):
                     self.fanMode.cycle()
                     self.update_fan()
                 elif action == ACTION_MOVE_LEFT:
                     self.fanMode.cycle_back()
                     self.update_fan()
             elif focusedControl == self.previouslyFocused == self.button_mode():
-                if action in (ACTION_MOVE_UP, ACTION_MOVE_RIGHT):
+                if action in \
+(ACTION_MOVE_UP, ACTION_MOVE_RIGHT, ACTION_MOUSE_LEFT_CLICK):
                     self.mode.cycle()
                     self.update_mode()
                 elif action == ACTION_MOVE_LEFT:
