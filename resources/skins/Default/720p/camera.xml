@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<window type="dialog">
+  <defaultcontrol always="false">105003</defaultcontrol> 
+  <allowoverlay>no</allowoverlay>
+  <coordinates>
+    <posx>387</posx>
+    <posy>230</posy>
+  </coordinates>
+  <width>506</width>
+  <height>260</height>
+  
+  <controls>
+
+    <control type="image">
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>506</width>
+      <height>260</height>
+      <texture>bg0.png</texture>
+    </control>
+    
+    <control type="label" id="105202">
+      <posx>32</posx>
+      <posy>52</posy>
+      <width>40</width>
+      <align>center</align>
+      <label>&#9651;</label>
+    </control>
+    <control type="label">
+      <posx>80</posx>
+      <posy>52</posy>
+      <label>Mode</label>
+    </control>
+    <control type="button" id="105002">
+      <posx>173</posx>
+      <posy>52</posy>
+      <width>160</width>
+      <height>30</height>
+      <align>center</align>
+      <aligny>center</aligny>
+      <label>OFF</label>
+      <texturefocus>-</texturefocus>
+      <texturenofocus>-</texturenofocus>
+      <ondown>105003</ondown>
+      <texturefocus>-</texturefocus>
+      <texturenofocus>-</texturenofocus>
+      <focusedcolor>FF66BBFF</focusedcolor>      
+    </control>
+        
+    <control type="label" id="105203">
+      <posx>32</posx>
+      <posy>92</posy>
+      <width>40</width>
+      <align>center</align>
+      <label>&#9665; &#9655;</label>
+    </control>    
+    <control type="label">
+      <posx>80</posx>
+      <posy>92</posy>
+      <label>Heat</label>
+    </control>
+    <control type="slider" id="105003">
+      <posx>153</posx>
+      <posy>100</posy>
+      <width>200</width>
+      <height>20</height>
+      <onup>105002</onup>
+      <ondown>105004</ondown>
+      <texturesliderbar>controls/slider_bg.png</texturesliderbar>
+      <textureslidernib>controls/slider_knob.png</textureslidernib>
+      <textureslidernibfocus>controls/slider_knob_focus.png</textureslidernibfocus>
+    </control>
+    <control type="label" id="105103">
+      <posx>460</posx>
+      <posy>92</posy>
+      <align>right</align>
+      <width>100</width>
+      <label>20°C</label>
+    </control>
+    
+    <control type="label" id="105204">
+      <posx>32</posx>
+      <posy>130</posy>
+      <width>40</width>
+      <align>center</align>
+      <label>&#9665; &#9655;</label>
+    </control>        
+    <control type="label">
+      <posx>80</posx>
+      <posy>132</posy>
+      <label>Cool</label>
+    </control>
+    <control type="slider" id="105004">
+      <posx>153</posx>
+      <posy>140</posy>
+      <width>200</width>
+      <height>20</height>
+      <onup>105003</onup>
+      <ondown>105005</ondown>
+      <texturesliderbar>controls/slider_bg.png</texturesliderbar>
+      <textureslidernib>controls/slider_knob.png</textureslidernib>
+      <textureslidernibfocus>controls/slider_knob_focus.png</textureslidernibfocus>
+    </control>
+    <control type="label" id="105104">
+      <posx>460</posx>
+      <posy>132</posy>
+      <width>100</width>
+      <align>right</align>
+      <label>10°C</label>
+    </control>
+
+    <control type="label" id="105205">
+      <posx>32</posx>
+      <posy>172</posy>
+      <width>40</width>
+      <align>center</align>
+      <label>&#9661;</label>
+    </control>
+    <control type="label">
+      <posx>80</posx>
+      <posy>172</posy>
+      <label>Fan</label>
+    </control>
+    <control type="button" id="105005">
+      <posx>173</posx>
+      <posy>172</posy>
+      <width>160</width>
+      <height>30</height>
+      <align>center</align>
+      <aligny>center</aligny>
+      <label>AUTO</label>
+      <onup>105004</onup>
+      <texturefocus>-</texturefocus>
+      <texturenofocus>-</texturenofocus>
+      <focusedcolor>FF66BBFF</focusedcolor>
+    </control>    
+
+  </controls>
+</window>
