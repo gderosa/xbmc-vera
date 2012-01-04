@@ -153,6 +153,12 @@ def popup(parent_, device_):
                 'hvac.xml', __cwd__, 'Default',             \
                 parent=parent_, device = device_            )
         popup.doModal()
+
+    elif device_['category'] == CAMERA:
+        popup = gui.popup.Camera(                           \
+                'camera.xml', __cwd__, 'Default',           \
+                parent=parent_, device = device_            )
+        popup.doModal()
     
     del popup # isn't this automatically garbaged?
 
