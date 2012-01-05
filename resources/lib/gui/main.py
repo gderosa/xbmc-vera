@@ -216,7 +216,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.setSceneButtonIcon(        buttonID, scene ) 
         self.setSceneButtonComment(     buttonID, scene )
         self.setSceneStateColor(        buttonID, scene )
-        self.resetInfoLabel(            buttonID        )  
+        self.setSceneInfo(              buttonID, scene )  
 
         self.showSceneButtonIconGroup(buttonID)
 
@@ -244,7 +244,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
         icon.setImage(image)
 
     def setSceneButtonComment(self, buttonID, scene): 
-        pass
+        self.setDeviceButtonComment(buttonID, scene)
     
     def setDeviceButtonComment(self, buttonID, device):
         labelID = controlid.room.buttonToComment(buttonID)
@@ -263,7 +263,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
             label.setLabel('')
 
     def setSceneStateColor(self, buttonID, scene):
-        pass
+        self.setDeviceStateColor(buttonID, device)
     
     def setDeviceStateColor(self, buttonID, device):
         stateBgID = controlid.room.buttonToStateBg(buttonID)
@@ -271,10 +271,13 @@ class GUI( xbmcgui.WindowXMLDialog ):
         bgImageFile = gui.device.stateBgImage(device)
         bgImage.setImage(bgImageFile)
 
-    def resetInfoLabel(self, buttonID): 
+    def setSceneInfo(self, buttonID, scene): 
         labelID = controlid.room.buttonToInfo(buttonID)
         label = self.getControl(labelID)
-        label.setLabel('') 
+        if scene['active']:
+            label.setLabel('Active') 
+        else:
+            label.setLabel('[COLOR grey][I]Not Active[/I][/COLOR]')
     
     def setDeviceInfo(self, buttonID, device):
         labelID = controlid.room.buttonToInfo(buttonID)

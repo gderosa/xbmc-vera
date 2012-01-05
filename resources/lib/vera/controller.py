@@ -40,18 +40,20 @@ class Controller:
         else:
             self.getData()
 
-    # Only merges devices, currently (TODO) 
+    # Merges devices and scenes 
     def mergeData(self, update_data):
         # loadtime shouldn't need to be updated
         for k in ('loadtime', 'dataversion', 'state', 'comment'):
             if k in update_data.keys():
                 self.data[k] = update_data[k]
         # TODO? a more efficient way? 
-        if 'devices' in update_data.keys():
-            for updated_device in update_data['devices']:
-                for i, device in enumerate(self.data['devices']):
-                    if int(device['id']) == int(updated_device['id']): 
-                        self.data['devices'][i].update(updated_device)
+        for k in ('scenes', 'devices'):
+            if k in update_data.keys():
+                for updated in update_data[k]:
+                    for i, device_or_scene in enumerate(self.data[k]):
+                        if \
+int(device_or_scene['id']) == int(updated['id']): 
+                            self.data[k][i].update(updated)
 
     def getData(self):
         http = httplib.HTTPConnection(self.host, self.port, timeout=5)
