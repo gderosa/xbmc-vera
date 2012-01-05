@@ -263,7 +263,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
             label.setLabel('')
 
     def setSceneStateColor(self, buttonID, scene):
-        self.setDeviceStateColor(buttonID, device)
+        self.setDeviceStateColor(buttonID, scene)
     
     def setDeviceStateColor(self, buttonID, device):
         stateBgID = controlid.room.buttonToStateBg(buttonID)
