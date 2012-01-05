@@ -15,6 +15,7 @@ import vera.device.category
 
 import gui.controlid.main as controlid
 import gui.device
+import gui.scene
 
 from gui.xbmc import * 
 
@@ -53,10 +54,11 @@ class UpdateThread(threading.Thread):
 class GUI( xbmcgui.WindowXMLDialog ):
 
     def __init__(self, *args, **kwargs):
-        self.buttonIDToRoom = {}
-        self.buttonIDToDevice = {}
+        self.buttonIDToRoom     = {}
+        self.buttonIDToDevice   = {}
+        self.buttonIDToScene    = {}
         self.setVera()
-        self.currentRoom = None
+        self.currentRoom        = None
         self.setUpdateThread()
 
     def onInit(self):
@@ -172,7 +174,18 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.currentRoom = room
 
         devices = self.vera.data['devices']
+        scenes  = self.vera.data['scenes']
+
         buttonID = controlid.room.DEVICE_FIRST_BUTTON
+
+        for scene in scenes:
+            if \
+                    ( room and int(scene['room']) == int(room['id']) ) or \
+                    ( not room and not int(scene['room']) )            :
+                self.showSceneButton(buttonID, scene)
+                self.buttonIDToScene[buttonID] = scene
+                buttonID += 1
+
         for device in devices:
             if device['category'] in vera.device.category.DISPLAYABLE:
                 if \
@@ -185,6 +198,16 @@ class GUI( xbmcgui.WindowXMLDialog ):
         groupID = controlid.room.buttonToGroup(buttonID) 
         self.hideRoomDevices(groupID)
         
+    def showSceneButton(self, buttonID, scene):
+        button = self.getControl(buttonID)
+        button.setLabel(scene['name'])
+
+        self.setSceneButtonIcon(        buttonID, scene ) 
+        self.setSceneButtonComment(     buttonID, scene )
+        self.setSceneStateColor(        buttonID, scene )
+        self.resetInfoLabel(            buttonID        )  
+
+        self.showSceneButtonIconGroup(buttonID)
 
     def showDeviceButton(self, buttonID, device):
         button = self.getControl(buttonID)
@@ -196,6 +219,12 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.setDeviceInfo(           buttonID, device    )
 
         self.showDeviceButtonIconGroup(buttonID)
+    
+    def setSceneButtonIcon(self, buttonID, scene):
+        iconID = controlid.room.buttonToIcon(buttonID)
+        icon = self.getControl(iconID)
+        image = gui.scene.icon()
+        icon.setImage(image)
 
     def setDeviceButtonIcon(self, buttonID, device):
         iconID = controlid.room.buttonToIcon(buttonID)
@@ -203,6 +232,9 @@ class GUI( xbmcgui.WindowXMLDialog ):
         image = gui.device.icon(device)
         icon.setImage(image)
 
+    def setSceneButtonComment(self, buttonID, scene): 
+        pass
+    
     def setDeviceButtonComment(self, buttonID, device):
         labelID = controlid.room.buttonToComment(buttonID)
         label = self.getControl(labelID)
@@ -219,12 +251,20 @@ class GUI( xbmcgui.WindowXMLDialog ):
         else:
             label.setLabel('')
 
+    def setSceneStateColor(self, buttonID, scene):
+        pass
+    
     def setDeviceStateColor(self, buttonID, device):
         stateBgID = controlid.room.buttonToStateBg(buttonID)
         bgImage = self.getControl(stateBgID)
         bgImageFile = gui.device.stateBgImage(device)
         bgImage.setImage(bgImageFile)
 
+    def resetInfoLabel(self, buttonID): 
+        labelID = controlid.room.buttonToInfo(buttonID)
+        label = self.getControl(labelID)
+        label.setLabel('') 
+    
     def setDeviceInfo(self, buttonID, device):
         labelID = controlid.room.buttonToInfo(buttonID)
         label = self.getControl(labelID)
@@ -234,6 +274,9 @@ class GUI( xbmcgui.WindowXMLDialog ):
         )
         label.setLabel(string)
 
+    def showSceneButtonIconGroup(self, buttonID):
+        self.showDeviceButtonIconGroup(buttonID)
+    
     def showDeviceButtonIconGroup(self, buttonID):
         groupID = controlid.room.buttonToGroup(buttonID)
         group = self.getControl(groupID)
