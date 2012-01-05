@@ -27,7 +27,7 @@ class Camera( xbmcgui.WindowXMLDialog ):
             self.close()
 
     def update(self):
-        self.image().setImage(u"http://192.168.0.27:3480/data_request?id=cam_image&Device_Num=64")
+        self.image().setImage('http://admin:@192.168.0.49/snapshot.cgi')
 
     def image(self):
         return self.getControl(controlid.camera.IMAGE)
