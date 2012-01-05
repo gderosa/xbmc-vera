@@ -42,7 +42,7 @@ class Controller:
 
     # Merges devices and scenes 
     def mergeData(self, update_data):
-        print(update_data) # DEBUG
+        # print(update_data) # DEBUG
         # loadtime shouldn't need to be updated
         for k in ('loadtime', 'dataversion', 'state', 'comment'):
             if k in update_data.keys():

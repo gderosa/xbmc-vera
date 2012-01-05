@@ -75,10 +75,10 @@ class GUI( xbmcgui.WindowXMLDialog ):
         if not self.updateThread:
             self.setUpdateThread()
         self.updateThread.start()
-    
+   
     def killUpdateThread(self, wait=False):
         self.runUpdateThread = False
-        
+        time.sleep(0.2) # dirty
         try:
             # Yeah, this is necessary to 'kill' the awaiting http client
             if self.vera.updateConnection.sock:
@@ -106,10 +106,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
             self.setVera()
             self.startUpdateThread()
         elif    controlID == controlid.GET_DATA:
-            # self.vera.getData()
-            # self.updateRooms()
-            self.killUpdateThread()
-            self.startUpdateThread()
+            self.forceRefresh()
         elif    controlID == controlid.EXIT:
             self.exit()
 
@@ -142,6 +139,12 @@ class GUI( xbmcgui.WindowXMLDialog ):
                     error_dialog.ok( 'Network Connection Error', msg )
             else: # requires a new window, has its own exception handling
                 gui.device.popup(self, device)
+
+    def forceRefresh(self):
+        self.killUpdateThread()
+        self.vera.getData()
+        self.update()
+        self.startUpdateThread()
 
     def update(self):
         self.updateRooms()
