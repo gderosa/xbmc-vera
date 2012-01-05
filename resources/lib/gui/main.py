@@ -95,9 +95,6 @@ class GUI( xbmcgui.WindowXMLDialog ):
         if action == ACTION_PREVIOUS_MENU:
             self.exit()
 
-    def onFocus(self, controlID):
-        pass
-
     def onClick(self, controlID):
         # Top buttons
         if      controlID == controlid.SETTINGS:
