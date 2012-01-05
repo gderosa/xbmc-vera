@@ -10,6 +10,7 @@ import xbmcgui
 import xbmcaddon
 
 import vera
+import vera.scene
 import vera.device 
 import vera.device.category
 
@@ -117,7 +118,17 @@ class GUI( xbmcgui.WindowXMLDialog ):
             room_ = self.buttonIDToRoom[controlID]
             self.fillRoom(room_)
         elif    controlID == controlid.ROOM_NONE:
-            self.fillRoom(None) 
+            self.fillRoom(None)
+
+        # Scenes
+        elif    controlID in self.buttonIDToScene.keys():
+            scene = self.buttonIDToScene[controlID]
+            try:
+                vera.scene.run(scene, vera_controller=self.vera) 
+            except socket.error as e:
+                msg = 'socket: %s' % e.__str__()
+                error_dialog = xbmcgui.Dialog()
+                error_dialog.ok( 'Network Connection Error', msg )
 
         # Devices
         elif    controlID in self.buttonIDToDevice.keys():
