@@ -25,7 +25,7 @@ class Controller:
             # http://wiki.micasaverde.com/index.php/UI_Simple#lu_sdata:_The_polling_loop
             loadtime, dataversion = self.data['loadtime'], self.data['dataversion']
             query_string = \
-'id=sdata&loadtime=%d&dataversion=%d&timeout=%d&minimumdelay=%d' % \
+'id=sdata&LoadTime=%d&DataVersion=%d&timeout=%d&minimumdelay=%d' % \
 (loadtime, dataversion, POLLING_TIMEOUT, MINIMUM_DELAY_MSECS)
             # must be "killable" by parent thread via .sock.shutdown(...)
             self.updateConnection = httplib.HTTPConnection( \
