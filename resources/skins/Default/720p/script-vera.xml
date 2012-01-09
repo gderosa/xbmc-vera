@@ -39,22 +39,22 @@
       <align>center</align>
       <control type="button" id="2002">
         <align>center</align>
-        <label>Reconnect</label>
-        <width>140</width>
+        <label>Force refresh</label>
+        <width>150</width>
         <ondown>103</ondown>
         <texturefocus>controls/button-focus.png</texturefocus>
       </control>
       <control type="button" id="2001">
         <align>center</align>
         <label>Settings</label>
-        <width>140</width>
+        <width>150</width>
         <ondown>110</ondown>
         <texturefocus>controls/button-focus.png</texturefocus>
       </control>
       <control type="button" id="9999">
         <align>center</align>
         <label>Exit</label>
-        <width>140</width>
+        <width>150</width>
         <ondown>105</ondown>
         <texturefocus>controls/button-focus.png</texturefocus>
       </control>
