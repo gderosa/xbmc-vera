@@ -48,7 +48,7 @@
       <align>center</align>
       <control type="button" id="2002">    
         <align>center</align>
-        <label>Get Data</label>      
+        <label>Reconnect</label>      
         <width>140</width>
         <ondown>103</ondown>
         <texturefocus>${button_texture_focus}</texturefocus>
