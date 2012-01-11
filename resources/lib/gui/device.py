@@ -51,9 +51,14 @@ def icon(device):
         level_round = round(level/25)*25 # 0.0, 25.0, 50.0, 75.0 or 100.0 
         return 'devices/Dimmable_Light_%d.png' % level_round
     elif    category == SWITCH:
-        if int(device['status']):
-            return 'devices/Binary_Light_100.png'
-        else:
+        try:
+            if int(device['status']):
+                return 'devices/Binary_Light_100.png'
+            else:
+                return 'devices/Binary_Light_0.png'
+        except KeyError:
+            # A device with no status, neither on or off.
+            # The comment line should explain what happened.
             return 'devices/Binary_Light_0.png'
     elif    category == MOTION_SENSOR:
         if int(device['tripped']):
