@@ -192,6 +192,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
 
         buttonID = controlid.room.DEVICE_FIRST_BUTTON
 
+        self.buttonIDToScene = {}
         for scene in scenes:
             if \
                     ( room and int(scene['room']) == int(room['id']) ) or \
@@ -200,6 +201,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
                 self.buttonIDToScene[buttonID] = scene
                 buttonID += 1
 
+        self.buttonIDToDevice = {}
         for device in devices:
             if device['category'] in vera.device.category.DISPLAYABLE:
                 if \
