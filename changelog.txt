@@ -1,8 +1,12 @@
-v0.0.1 (2011-09-06)
-- Initial stub
+v0.1.2 (2012-01-12)
+- Fix: a device button didn't work if previously handling a scene
+
+v0.1.1 (2012-01-11)
+- Handle binary switches with no 'status'
 
 v0.1.0 (2012-01-10)
 - First release
 
-v0.1.1 (2012-01-11)
-- Handle error conditions on binary switches (no status)
+v0.0.1 (2011-09-06)
+- Initial stub
+
