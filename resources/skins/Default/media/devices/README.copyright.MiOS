@@ -1,0 +1,43 @@
+Images listed below (and possibly other in this directory) are borrowed from
+Vera and Copyright MiOS/Micasaverde.
+
+On Vera devices they are generally found in:
+
+/www/cmh/skins/default/icons/ .
+
+Binary_Light_0.png
+Binary_Light_100.png
+Binary_Light.png
+default_device.png
+device.png
+devices.png
+Dimmable_Light_0.png
+Dimmable_Light_100.png
+Dimmable_Light_25.png
+Dimmable_Light_50.png
+Dimmable_Light_75.png
+Dimmable_Light.png
+Door_Lock_0.png
+Door_Lock_100.png
+Door_Lock.png
+generic_icon.png
+Generic_IO.png
+generic_sensor.png
+Humidity_Sensor.png
+Insteon.png
+Ip_Camera.png
+IR_Transmitter.png
+Light_Sensor.png
+Motion_Sensor_0.png
+Motion_Sensor_100.png
+Motion_Sensor.png
+Power_Meter.png
+state_blue.png
+state_green.png
+state_grey.png
+state_red.png
+Temperature_Sensor.png
+Thermostat.png
+USB_UIRT.png
+Window_Covering.png
+Zwave.png
